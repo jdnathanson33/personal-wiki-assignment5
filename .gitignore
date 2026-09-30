@@ -1,0 +1,14 @@
+# Instructor slide decks: used locally, not republished (see README, "Sources")
+vault/raw/course-slides/
+# Retrieval index is rebuilt by `./wiki ingest` (contains slide text)
+state/index/
+# Chat drafts saved with /save (generated, not sources)
+outputs/
+# Obsidian per-user UI state
+vault/.obsidian/workspace*.json
+vault/.obsidian/cache
+__pycache__/
+*.pyc
+.DS_Store
+# Model weights never go in the repo (Ollama stores them in ~/.ollama)
+*.gguf
