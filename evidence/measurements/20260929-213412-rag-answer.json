@@ -1,0 +1,46 @@
+{
+  "question": "What exploration, episodes, and learning rate did I use for the Pac-Man DQN?",
+  "wall_seconds_end_to_end": 47.18,
+  "model_stats": {
+    "model": "gemma4:e2b-it-qat",
+    "wall_seconds": 46.77,
+    "load_seconds": 0.0,
+    "prompt_tokens": 2805,
+    "prompt_seconds": 43.28,
+    "output_tokens": 45,
+    "output_seconds": 3.43,
+    "tokens_per_second": 13.12,
+    "done_reason": "stop"
+  },
+  "ollama_rss_before_mb": 3717.4,
+  "ollama_rss_peak_mb": 3752.4,
+  "ollama_ps": [
+    {
+      "name": "gemma4:e2b-it-qat",
+      "size_gb": 4.04,
+      "size_vram_gb": 0.0,
+      "context_length": 8192
+    },
+    {
+      "name": "embeddinggemma:latest",
+      "size_gb": 0.68,
+      "size_vram_gb": 0.0,
+      "context_length": 2048
+    }
+  ],
+  "device": {
+    "os": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+    "python": "3.14.7",
+    "machine": "x86_64",
+    "macos": "26.6.2",
+    "model": "MacBookPro16,1",
+    "cpu": "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+    "cpu_cores": "6 physical / 12 logical",
+    "ram_gb": 16.0,
+    "gpu": "Chipset Model: Intel UHD Graphics 630; VRAM (Dynamic, Max): 1536 MB; Chipset Model: AMD Radeon Pro 5300M; VRAM (Total): 4 GB",
+    "available_memory_gb_approx": 4.8,
+    "disk_free_gb": 68.1
+  },
+  "internet_at_run_time": "offline",
+  "model": "gemma4:e2b-it-qat"
+}

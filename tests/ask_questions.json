@@ -1,0 +1,37 @@
+{
+  "_comment": "Fixed ask-mode tests, written before running retrieval or the model. Kept outside vault/ so the harness can never retrieve this answer key. Expected passages are exact substrings of the original sources.",
+  "tests": [
+    {
+      "id": "T1",
+      "type": "direct, one source",
+      "question": "What was the mean evaluation score of my Pac-Man DQN agent before and after training?",
+      "expected_behavior": "Answer 492.0 before and 604.0 after (+112.0), cited to the Pac-Man README.",
+      "expected_sources": ["vault/raw/assignments/pacman-dqn-README.md"],
+      "expected_passages": ["492.0 → 604.0"]
+    },
+    {
+      "id": "T2",
+      "type": "reworded, one source",
+      "question": "In my networking app, what stops a signed-in user from handing one of their own contacts over to a different account?",
+      "expected_behavior": "Explain that the UPDATE policy (contacts_update_own) has a WITH CHECK clause that evaluates the row after the update and rejects it if user_id no longer equals auth.user_id(). The question avoids the source's words (RLS, policy, WITH CHECK, reassign), so it tests retrieval on paraphrase.",
+      "expected_sources": ["vault/raw/assignments/networking-tracker-README.md"],
+      "expected_passages": ["`with check` evaluates the post-update row"]
+    },
+    {
+      "id": "T3",
+      "type": "connects two sources",
+      "question": "What hardware did I train the Pac-Man agent and the nanoGPT models on?",
+      "expected_behavior": "Both ran on a cloud Linux machine with 2 CPU cores and no GPU (Pac-Man README: Cloud Linux VM, PyTorch on CPU; nanoGPT README: Cloud Linux container, x86-64, Python 3.11.15, PyTorch 2.14.0). Citations to both READMEs.",
+      "expected_sources": ["vault/raw/assignments/pacman-dqn-README.md", "vault/raw/assignments/custom-llm-README.md"],
+      "expected_passages": ["cloud linux vm, 2 cpu cores", "cloud linux container, x86-64, 2 cpu cores"]
+    },
+    {
+      "id": "T4",
+      "type": "unanswerable (plausible but not in the wiki)",
+      "question": "What grade did I receive on the networking tracker assignment?",
+      "expected_behavior": "INSUFFICIENT EVIDENCE. No source states a grade; the README only has a 'Grading evidence' section, which is a tempting but wrong match.",
+      "expected_sources": [],
+      "expected_passages": []
+    }
+  ]
+}
