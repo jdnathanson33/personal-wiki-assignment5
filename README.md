@@ -112,6 +112,7 @@ Most of the answer time is **reading** the retrieved passages (prompt evaluation
 ```bash
 git clone https://github.com/jdnathanson33/personal-wiki-assignment5.git
 cd personal-wiki-assignment5
+chmod +x wiki scripts/*.sh   # GitHub's web upload doesn't keep the executable bit
 ./scripts/setup_mac.sh        # prints device specs, installs Ollama if missing, pulls both models, runs ./wiki status
 ```
 
