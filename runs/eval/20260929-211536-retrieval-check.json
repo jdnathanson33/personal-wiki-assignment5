@@ -1,0 +1,50 @@
+{
+  "run": "20260929-211536",
+  "top_k_used_by_ask": 8,
+  "max_passages_per_file": 4,
+  "tests": [
+    {
+      "id": "T1",
+      "method": "hybrid (bm25 + embeddinggemma, RRF)",
+      "expected": [
+        {
+          "passage": "492.0 → 604.0",
+          "rank_without_cap": 1,
+          "in_ask_context_with_cap": true
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "method": "hybrid (bm25 + embeddinggemma, RRF)",
+      "expected": [
+        {
+          "passage": "`with check` evaluates the post-update row",
+          "rank_without_cap": 6,
+          "in_ask_context_with_cap": false
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "method": "hybrid (bm25 + embeddinggemma, RRF)",
+      "expected": [
+        {
+          "passage": "cloud linux vm, 2 cpu cores",
+          "rank_without_cap": 3,
+          "in_ask_context_with_cap": true
+        },
+        {
+          "passage": "cloud linux container, x86-64, 2 cpu cores",
+          "rank_without_cap": 9,
+          "in_ask_context_with_cap": true
+        }
+      ]
+    },
+    {
+      "id": "T4",
+      "method": "hybrid (bm25 + embeddinggemma, RRF)",
+      "expected": []
+    }
+  ]
+}

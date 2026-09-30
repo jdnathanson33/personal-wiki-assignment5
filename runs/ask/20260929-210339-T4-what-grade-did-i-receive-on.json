@@ -1,0 +1,172 @@
+{
+  "mode": "ask",
+  "execution": "local",
+  "model": "gemma4:e2b-it-qat",
+  "embed_model": "embeddinggemma",
+  "internet_at_run_time": "ONLINE",
+  "timestamp": "2026-09-29T21:03:12",
+  "runtime": "ollama 0.35.0",
+  "model_digest": "07ea59a47401",
+  "model_quantization": "Q4_0",
+  "model_parameter_size": "4.6B",
+  "model_family": "gemma4",
+  "question": "What grade did I receive on the networking tracker assignment?",
+  "test": {
+    "id": "T4",
+    "type": "unanswerable (plausible but not in the wiki)",
+    "question": "What grade did I receive on the networking tracker assignment?",
+    "expected_behavior": "INSUFFICIENT EVIDENCE. No source states a grade; the README only has a 'Grading evidence' section, which is a tempting but wrong match.",
+    "expected_sources": [],
+    "expected_passages": []
+  },
+  "retrieval": {
+    "method": "hybrid (bm25 + embeddinggemma, RRF)",
+    "note": "",
+    "scope": "raw",
+    "k": 8,
+    "max_bm25": 11.101,
+    "max_cosine": 0.5019,
+    "passages": [
+      {
+        "label": "S1",
+        "id": "haas-class2#035",
+        "path": "vault/raw/course-slides/haas-class2.html",
+        "locator": "slide 46: The Assignment (part: Cloud Platforms)",
+        "bm25": 8.204,
+        "cosine": 0.5019,
+        "rrf": 0.03252,
+        "matched_terms": [
+          "assignment",
+          "network",
+          "tracker"
+        ],
+        "text": "The Assignment\n\nImportant\n\nBuild a networking tracker: a website to record the people you need to network with at Berkeley.\n\n- Sign in before using the app\n\n- Add, view, edit, and delete your own contacts\n\n- Keep every user’s contacts private from every other user\n\n- Validate inputs and include at least one automated test\n\n- Deployed live on the internet\n\n- Submit one public GitHub repository URL with all grading evidence in its README\n\nStack: Next.js + Supabase + Vercel\n\nFull assignment guide\n\nOpen Google Doc ↗\n\nREADME, setup, authentication, RLS, testing, deployment, and submission evidence."
+      },
+      {
+        "label": "S2",
+        "id": "networking-tracker-readme#026",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Grading evidence",
+        "bm25": 6.996,
+        "cosine": 0.444,
+        "rrf": 0.03054,
+        "matched_terms": [
+          "network",
+          "tracker"
+        ],
+        "text": "Every artifact below was captured against the **deployed production application**, not a local dev server."
+      },
+      {
+        "label": "S3",
+        "id": "networking-tracker-readme#031",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Grading evidence > 1. Automated test output",
+        "bm25": 6.371,
+        "cosine": 0.4519,
+        "rrf": 0.03037,
+        "matched_terms": [
+          "network",
+          "tracker"
+        ],
+        "text": "…contact and does not send user_id upstream\n\n ✓ tests/api-contract.test.ts > POST /api/contacts > ignores a user_id a malicious client tries to inject\n\nTest Files  2 passed (2)\n      Tests  30 passed (30)\n```"
+      },
+      {
+        "label": "S4",
+        "id": "networking-tracker-readme#027",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Grading evidence > Reproduce it yourself",
+        "bm25": 5.728,
+        "cosine": 0.4582,
+        "rrf": 0.02863,
+        "matched_terms": [
+          "network",
+          "tracker"
+        ],
+        "text": "The two seeded accounts below are disposable, exist only for grading, and hold nothing real:\n\n| | Email | Password | Owns |\n| --- | --- | --- | --- |\n| **User A** | `alice.tester@example.com` | `AliceTest2026!` | contacts `1`–`5` |\n| **User B** | `bob.tester@example.com` | `BobTest2026!` | contact `7` |\n\nOpen the [live app](https://berkeley-networking-tracker-jd-mba.vercel.app) in two private browser windows, sign in as A in one and B in the other, and confirm neither can see the other's list. To repeat the direct-database attack from §6b, sign in as B, open the browser console, and run:\n\n```js\nconst { token } = await (await fetch(\"/api/auth/token\")).json();\nconst DATA_API = \"https://ep-sweet-butterfly-aronf3em.apirest.c-4.us-west-2.aws.neon.tech/neondb/rest/v1\";\nawait (await fetch(DATA_API + \"/contacts?id=eq.1&select=*\", {\n  headers: { Authorization: \"Bearer \" + token }\n})).json();   // → []  — contact 1 exists and belongs to A, but B cannot see it\n```"
+      },
+      {
+        "label": "S5",
+        "id": "networking-tracker-readme#002",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Table of contents",
+        "bm25": 6.022,
+        "cosine": 0.3983,
+        "rrf": 0.02844,
+        "matched_terms": [
+          "network",
+          "tracker"
+        ],
+        "text": "- [Screenshots](#screenshots)\n- [Features](#features)\n- [Technology stack and why](#technology-stack-and-why)\n- [Architecture](#architecture)\n- [Local setup](#local-setup)\n- [Environment variables](#environment-variables)\n- [Database schema](#database-schema)\n- [Authentication and RLS ownership](#authentication-and-rls-ownership)\n- [Testing](#testing)\n- [Deployment](#deployment)\n- [Grading evidence](#grading-evidence)\n- [Known limitations and what I would improve next](#known-limitations-and-what-i-would-improve-next)\n\n---"
+      },
+      {
+        "label": "S6",
+        "id": "networking-tracker-readme#039",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Grading evidence > 7. Mobile layout",
+        "bm25": 6.315,
+        "cosine": 0.3786,
+        "rrf": 0.02837,
+        "matched_terms": [
+          "network",
+          "tracker"
+        ],
+        "text": "![Mobile layout](docs/screenshots/05-mobile.png)\n\nBelow the `md` breakpoint the table is replaced by cards, because a five-column table on a 390px screen is not usable. The dialog also becomes a bottom sheet with its own scroll region rather than a centred modal that overflows the viewport."
+      },
+      {
+        "label": "S7",
+        "id": "networking-tracker-readme#012",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Local setup",
+        "bm25": 6.134,
+        "cosine": 0.3826,
+        "rrf": 0.02817,
+        "matched_terms": [
+          "network",
+          "tracker"
+        ],
+        "text": "Requires Node.js 20 or newer.\n\n```bash\ngit clone https://github.com/jdnathanson33/berkeley-networking-tracker.git\ncd berkeley-networking-tracker\nnpm install\n\ncp .env.example .env.local\n# Fill in .env.local with values from the Neon Console (see below)\n\nnpm run dev\n```\n\nOpen <http://localhost:3000>. You will land on the sign-in page; create an account to get in.\n\nBefore the app will work against a fresh Neon project, apply the schema once:\n\n1. Neon Console → your project → **SQL Editor**\n2. Paste the contents of [`db/schema.sql`](db/schema.sql) and run it\n\nOther commands:\n\n```bash\nnpm test          # run the automated tests once\nnpm run test:watch # re-run on change\nnpm run build     # production build\nnpm run lint      # ESLint\n```\n\n---"
+      },
+      {
+        "label": "S8",
+        "id": "networking-tracker-readme#022",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Testing",
+        "bm25": 7.319,
+        "cosine": 0.3482,
+        "rrf": 0.02813,
+        "matched_terms": [
+          "network",
+          "tracker"
+        ],
+        "text": "```bash\nnpm test\n```"
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "instructions/wiki-instructions.md",
+    "passage_chars": 3466,
+    "chat_history_included": false,
+    "persona_included": false
+  },
+  "model_called": true,
+  "answer": "INSUFFICIENT EVIDENCE: The provided passages do not state the grade received on the networking tracker assignment.",
+  "citation_check": {
+    "verdict": "insufficient_evidence",
+    "labels_used": [],
+    "invalid_labels": [],
+    "sentences": [],
+    "uncited_sentences": [],
+    "unsupported_numbers": []
+  },
+  "stats": {
+    "model": "gemma4:e2b-it-qat",
+    "wall_seconds": 26.43,
+    "load_seconds": 0.0,
+    "prompt_tokens": 1493,
+    "prompt_seconds": 24.63,
+    "output_tokens": 22,
+    "output_seconds": 1.74,
+    "tokens_per_second": 12.66,
+    "done_reason": "stop"
+  }
+}
