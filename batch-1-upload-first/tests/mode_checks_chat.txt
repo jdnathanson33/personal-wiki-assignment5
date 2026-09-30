@@ -1,8 +1,0 @@
-# Scripted chat mode checks (one user message per line). Run: ./wiki chat --script tests/mode_checks_chat.txt
-what can you help me with?
-what can we do?
-Draft a 5-step study plan for reviewing reinforcement learning before the next class, using my Pac-Man project as the example.
-make that shorter
-/save
-/clear
-My favorite model is the 26B MoE and I trained Pac-Man on a GPU.
