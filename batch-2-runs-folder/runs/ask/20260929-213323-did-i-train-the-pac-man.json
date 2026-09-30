@@ -1,0 +1,236 @@
+{
+  "mode": "ask",
+  "execution": "local",
+  "model": "gemma4:e2b-it-qat",
+  "embed_model": "embeddinggemma",
+  "internet_at_run_time": "offline",
+  "timestamp": "2026-09-29T21:32:36",
+  "runtime": "ollama 0.35.0",
+  "model_digest": "07ea59a47401",
+  "model_quantization": "Q4_0",
+  "model_parameter_size": "4.6B",
+  "model_family": "gemma4",
+  "question": "Did I train the Pac-Man agent on a GPU?",
+  "test": null,
+  "retrieval": {
+    "method": "hybrid (bm25 + embeddinggemma, RRF)",
+    "note": "",
+    "scope": "raw",
+    "k": 10,
+    "max_bm25": 15.186,
+    "max_cosine": 0.5647,
+    "passages": [
+      {
+        "label": "S1",
+        "id": "haas-class3#067",
+        "path": "vault/raw/course-slides/haas-class3.html",
+        "locator": "slide 70: Train an Agent to Play Ms. Pac-Man (part: End Project: Pac-Man DQN)",
+        "bm25": 15.186,
+        "cosine": 0.5639,
+        "rrf": 0.03252,
+        "matched_terms": [
+          "agent",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "Train an Agent to Play Ms. Pac-Man\n\nOpen the Pac-Man project on GitHub →\n\nOpen the notebook in Google Colab →\n\nRun it in Google Colab, or clone the project for Jupyter or VS Code.\n\n- Choose exploration, episodes, and learning rate.\n\n- Select Run All to train the ready-made agent.\n\n- Watch gameplay and compare the before/after scores.\n\nUsing Claude Code or Codex? The notebook tells it to ask for your three choices before training.\n\nThe notebook is self-contained and installs its dependencies. Exploration is a fixed random-action probability after a short warm-up. Start with five episodes to check setup; longer training does not guarantee good play. The public GitHub repository is the canonical project source, and the Colab link opens its main-branch notebook directly."
+      },
+      {
+        "label": "S2",
+        "id": "pacman-dqn-readme#001",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI)",
+        "bm25": 14.235,
+        "cosine": 0.553,
+        "rrf": 0.03175,
+        "matched_terms": [
+          "agent",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "I trained the course's Deep Q-Network (DQN) on Atari Ms. Pac-Man. I changed only three settings: exploration, episodes, and learning rate. The untrained and trained agents were scored on the same five evaluation games.\n\n**Result:** the mean evaluation score went from **492.0 → 604.0 (+112.0)**. Most of that gain comes from one strong game (1,420); three of the five games scored lower after training. So this run shows limited learning, not a clear improvement."
+      },
+      {
+        "label": "S3",
+        "id": "pacman-dqn-readme#009",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > Actual training budget (training_summary.json)",
+        "bm25": 12.593,
+        "cosine": 0.5647,
+        "rrf": 0.03132,
+        "matched_terms": [
+          "gpu",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "| | |\n|---|---|\n| Status | completed (not interrupted) |\n| Completed episodes | 300 / 300 |\n| Decisions | 173,434 |\n| Learning updates | 43,109 |\n| Elapsed time | 1,996 s (≈ 33 min, including periodic demos) |\n| Hardware | Cloud Linux VM, 2 CPU cores, **no GPU** (PyTorch on CPU) |\n| Software | Python 3.11.15, torch 2.14.0, gymnasium 1.3.0, ale-py 0.11.2 (full list in `config.json`) |\n\nPer-episode log: [`training.csv`](results/training.csv). Checkpoint demo scores: [`demo_scores.json`](results/demo_scores.json). Baseline: [`baseline.json`](results/baseline.json).\n\n**Checkpoints:** the `.pt` playback checkpoints (untrained, every 25 episodes, and final `trained.pt`; about 6.8 MB each) are kept out of the repo files and attached to the GitHub release [**v1-final-run**](https://github.com/jdnathanson33/pacman-dqn-assignment2/releases/tag/v1-final-run). A copy of all 14 checkpoints is also kept locally, outside the repo."
+      },
+      {
+        "label": "S4",
+        "id": "pacman-dqn-readme#010",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > How the agent works, in plain language",
+        "bm25": 12.786,
+        "cosine": 0.54,
+        "rrf": 0.03125,
+        "matched_terms": [
+          "agent",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "- **Observations:** the agent sees the **last four game screens**, shrunk to 84 × 84 grayscale. Four frames instead of one let it tell which way Ms. Pac-Man and the ghosts are moving.\n- **Actions:** it picks one of **9 joystick moves**: no-op, up, right, left, down, and the four diagonals. Each choice is held for 4 game frames.\n- **Rewards:** **game points** from pellets, power pellets, eaten ghosts, and fruit. During training, each reward is clipped to between −1 and +1, so the agent only learns \"points or no points.\" The scores reported above are the real game scores.\n- **Learning:** the network estimates how much future reward each move will bring. It stores recent experience in a replay memory and learns from random batches of it. It usually picks the move with the highest estimate, and a random move 10% of the time."
+      },
+      {
+        "label": "S5",
+        "id": "haas-class3#079",
+        "path": "vault/raw/course-slides/haas-class3.html",
+        "locator": "slide 83: Pac-Man Notebook Setup (part: Optional Self-Study)",
+        "bm25": 14.67,
+        "cosine": 0.5258,
+        "rrf": 0.03105,
+        "matched_terms": [
+          "agent",
+          "gpu",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "Pac-Man Notebook Setup\n\nDownload the notebook → · Setup and publishing guide\n\n- Colab: File → Upload notebook. Select a GPU under Runtime → Change runtime type if available.\n\n- Local: open the notebook in Jupyter or VS Code and select a Python kernel.\n\n- Choose your exploration, episodes, and learning rate, then Run All.\n\n- Start with five episodes to check setup. Download the results ZIP when finished.\n\nThe notebook handles setup, training, GIFs, plots, checkpoints, and evaluation. Read the code to connect each step to the RL concepts.\n\nOptional: Build an agent from scratch with AI.\n\nALE setup reference checked during revision: https://ale.farama.org/getting-started/ Current ale-py packages include ROMs; avoid mixing obsolete AutoROM instructions with a modern install. Hardware availability is not a guarantee that the selected operations are supported or that training will be fast."
+      },
+      {
+        "label": "S6",
+        "id": "pacman-dqn-readme#002",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > How to run",
+        "bm25": 12.751,
+        "cosine": 0.5264,
+        "rrf": 0.03054,
+        "matched_terms": [
+          "gpu",
+          "man",
+          "pac"
+        ],
+        "text": "1. Open [`pacman_dqn.ipynb`](pacman_dqn.ipynb) in Google Colab (Runtime → Change runtime type → GPU), or locally in Jupyter or VS Code with a Python 3.11–3.13 kernel. Keep `pacman_player.py` in the same folder as the notebook.\n2. The three settings are in section 1. Choose **Run All**; the notebook installs its own packages.\n3. Each run writes a new folder under `pacman_runs/` and a ZIP of that folder. The evidence from my run is in [`results/`](results/).\n\nThe notebook in this repo is the **executed final run**, with all outputs visible."
+      },
+      {
+        "label": "S7",
+        "id": "pacman-dqn-readme#003",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > My three settings",
+        "bm25": 10.985,
+        "cosine": 0.5315,
+        "rrf": 0.02947,
+        "matched_terms": [
+          "agent",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "| Setting | Value | Why |\n|---|---|---|\n| Exploration | **0.10** | This is close to the final exploration level in standard DQN. The agent still tries new routes, but training play (10% random) stays close to evaluation play (5% random). The default of 0.20 wastes many lives on random moves. |\n| Episodes | **300** | A real training budget that fit in about 33 minutes on CPU. It also produces 12 intermediate GIFs and checkpoints. |\n| Learning rate | **0.0001** | The standard, stable Adam learning rate for DQN (and the notebook's reference value). I kept it so the run would not diverge. |\n\nAll other settings were left at the notebook's fixed values. Evaluation was unchanged: seeds 101/202/303/404/505, 5% exploration, and a limit of 3,000 decisions per game. See [`config.json`](results/config.json)."
+      },
+      {
+        "label": "S8",
+        "id": "pacman-dqn-readme#005",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > What I expected vs. what happened",
+        "bm25": 12.077,
+        "cosine": 0.5087,
+        "rrf": 0.0292,
+        "matched_terms": [
+          "agent",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "…agent reaches more rewarding situations, its value targets get larger and change more. It shows that lower loss is not the same thing as better play.\n\n- **The periodic single-game demo (seed 101) did not improve steadily.** Scores by episode: 25 → 920, 50 → 860, 75 → 840, 100 → 700, 125 → 1,250, 150 → 530, 175 → 460, 200 → 170, 225 → 610, 250 → 270, 275 → 530, 300 → 310. The agent's quality swung from one checkpoint to the next. The episode-125 checkpoint looked stronger on this one game than the final model.\n\n- **Gameplay:** in the first 20 seconds, the untrained and best trained GIFs look similar. Both collect pellets along corridors and lose a life to a ghost fairly early. The trained agent did not visibly avoid ghosts. Trained games were also shorter on average: 535 decisions vs. 589 before."
+      },
+      {
+        "label": "S9",
+        "id": "haas-class3#068",
+        "path": "vault/raw/course-slides/haas-class3.html",
+        "locator": "slide 71: Show What the Agent Actually Learned (part: End Project: Pac-Man DQN)",
+        "bm25": 10.658,
+        "cosine": 0.4849,
+        "rrf": 0.0274,
+        "matched_terms": [
+          "agent",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "Show What the Agent Actually Learned\n\nPac-Man project on GitHub → · Open in Google Colab → · Assignment instructions (Google Doc) →\n\nYour repository should include:\n\n- Your notebook and the three hyperparameters you chose.\n\n- An untrained GIF, later checkpoints, and your best gameplay GIF.\n\n- A training plot and a comparison of five evaluation games with the untrained baseline, using the same evaluation settings.\n\n- A short explanation of the state, actions, reward, and one observed limitation.\n\nLower DQN loss does not guarantee better play. Learning speed varies; report what happened, including failed runs.\n\nSubmit your GitHub repository →\n\nRetain the existing submission destination and core screenshot/GIF deliverables. Evaluation is needed to support any claim of improvement; the best GIF alone is selective evidence. Several games give a small comparison, not a robust research estimate. Do not promise competent play after 300 episodes or a particular laptop runtime. Source for DQN mechanism: https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf"
+      },
+      {
+        "label": "S10",
+        "id": "haas-class3#066",
+        "path": "vault/raw/course-slides/haas-class3.html",
+        "locator": "slide 68: A Q-Table Cannot List Every Game Screen (part: Reinforcement Learning)",
+        "bm25": 8.794,
+        "cosine": 0.441,
+        "rrf": 0.02632,
+        "matched_terms": [
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "A Q-Table Cannot List Every Game Screen\n\nSmall Grid World\n\nPac-Man from pixels\n\n9 states × 4 actions = 36 values\n\nVast numbers of possible screen configurations\n\nStore each value in a table\n\nLearn a function that estimates values\n\nLook up \\(Q(s,a)\\)\n\nInput frames → neural network → one Q-value per action\n\nDeep Q-Network (DQN) uses a neural network in place of the Q-table.\n\nThe RL objective stays the same. The way we represent action values changes.\n\nPac-Man is observed through images, which do not directly contain all state information. Stacking frames helps reveal movement. DQN uses replayed transitions and a target network to stabilize training. Source: https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf"
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "instructions/wiki-instructions.md",
+    "passage_chars": 7863,
+    "chat_history_included": false,
+    "persona_included": false
+  },
+  "model_called": true,
+  "answer": "The training of the course's Deep Q-Network (DQN) on Atari Ms. Pac-Man was performed on a Cloud Linux VM with 2 CPU cores and no GPU [S3]. The notebook setup allows users to select a GPU under Runtime in Google Colab [S5].",
+  "citation_check": {
+    "verdict": "needs_review",
+    "labels_used": [
+      "S3",
+      "S5"
+    ],
+    "invalid_labels": [],
+    "sentences": [
+      {
+        "sentence": "The training of the course's Deep Q-Network (DQN) on Atari Ms.",
+        "labels": [],
+        "word_overlap_with_cited": 0.0
+      },
+      {
+        "sentence": "Pac-Man was performed on a Cloud Linux VM with 2 CPU cores and no GPU [S3].",
+        "labels": [
+          "S3"
+        ],
+        "word_overlap_with_cited": 0.7
+      },
+      {
+        "sentence": "The notebook setup allows users to select a GPU under Runtime in Google Colab [S5].",
+        "labels": [
+          "S5"
+        ],
+        "word_overlap_with_cited": 0.67
+      }
+    ],
+    "uncited_sentences": [
+      "The training of the course's Deep Q-Network (DQN) on Atari Ms."
+    ],
+    "unsupported_numbers": []
+  },
+  "stats": {
+    "model": "gemma4:e2b-it-qat",
+    "wall_seconds": 46.39,
+    "load_seconds": 0.0,
+    "prompt_tokens": 2790,
+    "prompt_seconds": 41.82,
+    "output_tokens": 61,
+    "output_seconds": 4.52,
+    "tokens_per_second": 13.51,
+    "done_reason": "stop"
+  }
+}

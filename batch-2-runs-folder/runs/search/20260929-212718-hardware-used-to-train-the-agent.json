@@ -1,0 +1,48 @@
+{
+  "mode": "search",
+  "execution": "local",
+  "query": "hardware used to train the agent",
+  "scope": "all",
+  "method": "hybrid (bm25 + embeddinggemma, RRF)",
+  "note": "",
+  "internet_at_run_time": "offline",
+  "generated_answer": null,
+  "results": [
+    {
+      "rank": 1,
+      "kind": "raw",
+      "path": "vault/raw/course-slides/haas-class3.html",
+      "locator": "slide 70: Train an Agent to Play Ms. Pac-Man (part: End Project: Pac-Man DQN)",
+      "bm25": 5.718,
+      "cosine": 0.4142,
+      "text": "Train an Agent to Play Ms. Pac-Man\n\nOpen the Pac-Man project on GitHub →\n\nOpen the notebook in Google Colab →\n\nRun it in Google Colab, or clone the project for Jupyter or VS Code.\n\n- Choose exploration, episodes, and learning rate.\n\n- Select Run All to train the ready-made agent.\n\n- Watch gameplay and compare the before/after scores.\n\nUsing Claude Code or Codex? The notebook tells it to ask for your three choices before training.\n\nThe notebook is self-contained and installs its dependencies. Exploration is a fixed random-action probability after a short warm-up. Start with five episodes to check setup; longer training does not guarantee good play. The public GitHub repository is the canonical project source, and the Colab link opens its main-branch notebook directly."
+    },
+    {
+      "rank": 2,
+      "kind": "wiki",
+      "path": "vault/wiki/Projects/Pac-Man DQN Agent.md",
+      "locator": "Pac-Man DQN Agent > Key details",
+      "bm25": 5.926,
+      "cosine": 0.3994,
+      "text": "- The training budget consisted of 300 episodes, which took approximately 1,996 s (about 33 min, including periodic demos) and resulted in 173,434 decisions ([[raw/assignments/pacman-dqn-README.md|§ Actual training budget (training_summary.json)]]).\n\n- The exploration setting was set to 0.10, which is close to the final exploration level in standard DQN, allowing the agent to try new routes while maintaining 10% random training play ([[raw/assignments/pacman-dqn-README.md#My three settings|§ My three settings]]).\n\n- The learning rate was set to 0.0001, which is the standard, stable Adam learning rate for DQN ([[raw/assignments/pacman-dqn-README.md#My three settings|§ My three settings]]).\n\n- The mean evaluation score went from 492.0 (untrained) to 604.0 (trained) across five evaluation games ([[raw/assignments/pacman-dqn-README.md#Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI)|§ Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI)]]; [[raw/assignments/pacman-dqn-README.md|§ Evaluation: all five games (comparison.json)]])."
+    },
+    {
+      "rank": 3,
+      "kind": "wiki",
+      "path": "vault/wiki/Projects/Pac-Man DQN Agent.md",
+      "locator": "Pac-Man DQN Agent",
+      "bm25": 5.798,
+      "cosine": 0.3963,
+      "text": "The Pac-Man DQN Agent was trained on Atari Ms. Pac-Man using three specific settings: exploration at 0.10, 300 episodes, and a learning rate of 0.0001. This run showed a mean evaluation score increase from 492.0 to 604.0, but the learning was described as limited and noisy."
+    },
+    {
+      "rank": 4,
+      "kind": "raw",
+      "path": "vault/raw/assignments/pacman-dqn-README.md",
+      "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > Actual training budget (training_summary.json)",
+      "bm25": 4.988,
+      "cosine": 0.4659,
+      "text": "| | |\n|---|---|\n| Status | completed (not interrupted) |\n| Completed episodes | 300 / 300 |\n| Decisions | 173,434 |\n| Learning updates | 43,109 |\n| Elapsed time | 1,996 s (≈ 33 min, including periodic demos) |\n| Hardware | Cloud Linux VM, 2 CPU cores, **no GPU** (PyTorch on CPU) |\n| Software | Python 3.11.15, torch 2.14.0, gymnasium 1.3.0, ale-py 0.11.2 (full list in `config.json`) |\n\nPer-episode log: [`training.csv`](results/training.csv). Checkpoint demo scores: [`demo_scores.json`](results/demo_scores.json). Baseline: [`baseline.json`](results/baseline.json).\n\n**Checkpoints:** the `.pt` playback checkpoints (untrained, every 25 episodes, and final `trained.pt`; about 6.8 MB each) are kept out of the repo files and attached to the GitHub release [**v1-final-run**](https://github.com/jdnathanson33/pacman-dqn-assignment2/releases/tag/v1-final-run). A copy of all 14 checkpoints is also kept locally, outside the repo."
+    }
+  ]
+}

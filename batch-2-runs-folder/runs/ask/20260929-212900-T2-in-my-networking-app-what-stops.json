@@ -1,0 +1,265 @@
+{
+  "mode": "ask",
+  "execution": "local",
+  "model": "gemma4:e2b-it-qat",
+  "embed_model": "embeddinggemma",
+  "internet_at_run_time": "offline",
+  "timestamp": "2026-09-29T21:28:06",
+  "runtime": "ollama 0.35.0",
+  "model_digest": "07ea59a47401",
+  "model_quantization": "Q4_0",
+  "model_parameter_size": "4.6B",
+  "model_family": "gemma4",
+  "question": "In my networking app, what stops a signed-in user from handing one of their own contacts over to a different account?",
+  "test": {
+    "id": "T2",
+    "type": "reworded, one source",
+    "question": "In my networking app, what stops a signed-in user from handing one of their own contacts over to a different account?",
+    "expected_behavior": "Explain that the UPDATE policy (contacts_update_own) has a WITH CHECK clause that evaluates the row after the update and rejects it if user_id no longer equals auth.user_id(). The question avoids the source's words (RLS, policy, WITH CHECK, reassign), so it tests retrieval on paraphrase.",
+    "expected_sources": [
+      "vault/raw/assignments/networking-tracker-README.md"
+    ],
+    "expected_passages": [
+      "`with check` evaluates the post-update row"
+    ],
+    "assessment": "**PASS, with a retrieval weakness.** The question avoids the source's words. Keyword and embedding search still put the right section (§ The four policies) at **rank 6 of 10**, behind five less-relevant networking-README sections, including three “Grading evidence” passages. The answer's first two sentences are correct and come from the README intro (S5). The key claim is the third sentence: the `UPDATE` policy needs both `USING` and `WITH CHECK`, and `USING` alone would let a user set `user_id` to someone else's id. I checked it against S6, and it paraphrases that section correctly. The answer does not name the policy (`contacts_update_own`) or say that `WITH CHECK` evaluates the post-update row, so it is less precise than my expected answer. In the first rehearsal (top-8 with a 4-per-file cap) this passage was cut from the context. Raising top-k to 10 with a cap of 6 fixed that (see runs/eval retrieval checks)."
+  },
+  "retrieval": {
+    "method": "hybrid (bm25 + embeddinggemma, RRF)",
+    "note": "",
+    "scope": "raw",
+    "k": 10,
+    "max_bm25": 20.025,
+    "max_cosine": 0.4472,
+    "passages": [
+      {
+        "label": "S1",
+        "id": "networking-tracker-readme#027",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Grading evidence > Reproduce it yourself",
+        "bm25": 20.025,
+        "cosine": 0.4299,
+        "rrf": 0.03252,
+        "matched_terms": [
+          "account",
+          "app",
+          "contact",
+          "network",
+          "one",
+          "sign",
+          "user"
+        ],
+        "text": "The two seeded accounts below are disposable, exist only for grading, and hold nothing real:\n\n| | Email | Password | Owns |\n| --- | --- | --- | --- |\n| **User A** | `alice.tester@example.com` | `AliceTest2026!` | contacts `1`–`5` |\n| **User B** | `bob.tester@example.com` | `BobTest2026!` | contact `7` |\n\nOpen the [live app](https://berkeley-networking-tracker-jd-mba.vercel.app) in two private browser windows, sign in as A in one and B in the other, and confirm neither can see the other's list. To repeat the direct-database attack from §6b, sign in as B, open the browser console, and run:\n\n```js\nconst { token } = await (await fetch(\"/api/auth/token\")).json();\nconst DATA_API = \"https://ep-sweet-butterfly-aronf3em.apirest.c-4.us-west-2.aws.neon.tech/neondb/rest/v1\";\nawait (await fetch(DATA_API + \"/contacts?id=eq.1&select=*\", {\n  headers: { Authorization: \"Bearer \" + token }\n})).json();   // → []  — contact 1 exists and belongs to A, but B cannot see it\n```"
+      },
+      {
+        "label": "S2",
+        "id": "networking-tracker-readme#036",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Grading evidence > 6. Two-account privacy test",
+        "bm25": 19.133,
+        "cosine": 0.4278,
+        "rrf": 0.03175,
+        "matched_terms": [
+          "account",
+          "contact",
+          "network",
+          "one",
+          "sign",
+          "user"
+        ],
+        "text": "Two accounts on the production deployment:\n\n| Account | Email | Owns |\n| --- | --- | --- |\n| **User A** | `alice.tester@example.com` | contacts `1`–`5` |\n| **User B** | `bob.tester@example.com` | contact `7` |\n\n**6a. Through the application API, signed in as User B:**\n\n```console\nGET    /api/contacts             → 200  {\"contacts\":[]}          A's five rows are invisible\nGET    /api/contacts?sort=name   → 200  {\"contacts\":[]}          no ordering trick reveals them\nPATCH  /api/contacts/1           → 404  \"That contact doesn't exist, or isn't yours.\"\nDELETE /api/contacts/1           → 404  \"That contact doesn't exist, or isn't yours.\"\nPATCH  /api/contacts/1  {\"user_id\":\"bob\"}\n                                 → 400  field not accepted by the update schema\nPOST   /api/contacts             → 201  B's own row, stamped with B's user_id\nGET    /api/contacts             → 200  exactly one row: B's own\n```\n\n**6b. Bypassing the application entirely.** This is the test that matters, because the Data API URL is public and a determined user can call it straight from the browser console. Here is User B's own JWT, sent directly to Neon with no application code in the request path:"
+      },
+      {
+        "label": "S3",
+        "id": "networking-tracker-readme#033",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Grading evidence > 3. Sign-in and sign-out",
+        "bm25": 17.051,
+        "cosine": 0.4472,
+        "rrf": 0.03154,
+        "matched_terms": [
+          "app",
+          "contact",
+          "network",
+          "sign"
+        ],
+        "text": "![Sign in](docs/screenshots/01-sign-in.png)\n\nSigned out, the app never renders contact UI at all. `app/page.tsx` is a Server Component that calls `getSessionUser()` and redirects before returning markup, and the API refuses independently:\n\n```console\nPOST /api/auth/sign-out          → 200  {\"success\":true}\nGET  /api/contacts  (no session) → 401  {\"error\":\"You need to be signed in.\"}\n```"
+      },
+      {
+        "label": "S4",
+        "id": "networking-tracker-readme#043",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Known limitations and what I would improve next",
+        "bm25": 19.043,
+        "cosine": 0.3771,
+        "rrf": 0.02971,
+        "matched_terms": [
+          "account",
+          "app",
+          "contact",
+          "hand",
+          "network",
+          "one",
+          "stop",
+          "user"
+        ],
+        "text": "…at runtime.** It exists for applying the schema. Keeping an unused credential in the template is a small smell.\n\n**What I would do next, in order**\n\n1. **A Playwright end-to-end test for the two-account privacy case**, run in CI. Right now the most important security property is verified by hand, which means it can silently regress. This is the highest-value gap.\n2. **Turn on email verification**, and add password reset.\n3. **Pagination plus a proper full-text search index**, so the app degrades gracefully as a network grows.\n4. **Optimistic updates with rollback on failure**, so the list feels instant.\n5. **A \"last contacted\" date and a follow-up reminder**, which is the feature that would actually change behaviour — a tracker you don't get nudged by is a tracker you stop opening.\n6. **A `contact_interactions` child table** so you can log each conversation rather than appending to one notes field. It would carry the same four RLS policies, keyed off the parent's `user_id`."
+      },
+      {
+        "label": "S5",
+        "id": "networking-tracker-readme#001",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker",
+        "bm25": 16.199,
+        "cosine": 0.4232,
+        "rrf": 0.02971,
+        "matched_terms": [
+          "app",
+          "contact",
+          "network",
+          "sign",
+          "user"
+        ],
+        "text": "A private contact tracker for the people you want to stay connected with at Berkeley. Each signed-in user gets their own list — add someone with their company, role, where you met, free-form notes, and a high/medium/low priority, then sort and filter to find them again. The interesting part is not the CRUD; it's that a user's rows are isolated from every other user's by **Row Level Security inside Postgres itself**, not by a `WHERE` clause in application code. The database extracts the caller's identity from a signed JWT and filters rows before any query returns, so even a caller who bypasses this app entirely and hits the public Data API directly can only ever see their own data.\n\n**Live app: https://berkeley-networking-tracker-jd-mba.vercel.app**\n\n---"
+      },
+      {
+        "label": "S6",
+        "id": "networking-tracker-readme#020",
+        "path": "vault/raw/assignments/networking-tracker-README.md",
+        "locator": "Berkeley Networking Tracker > Authentication and RLS ownership > The four policies",
+        "bm25": 19.557,
+        "cosine": 0.343,
+        "rrf": 0.02964,
+        "matched_terms": [
+          "contact",
+          "different",
+          "hand",
+          "network",
+          "one",
+          "sign",
+          "stop",
+          "user"
+        ],
+        "text": "…exist**: which rows may I read, update, or delete?\n- `WITH CHECK` validates **rows as they will be after the write**: is the result still mine?\n\n`UPDATE` needs both, and this is the subtle one. `USING` alone would stop you editing someone else's contact, but would happily let you take your *own* contact and set `user_id` to another person's id — handing them a row, or planting one in their list. `WITH CHECK` evaluates the post-update row and rejects it, because after that change `auth.user_id() = user_id` is false. That is exactly the requirement *\"update policies prevent a user from changing a row so it belongs to someone else.\"*\n\n`INSERT` has only `WITH CHECK` because there is no pre-existing row to filter. `SELECT` and `DELETE` have only `USING` because they do not produce a new row.\n\n**Grants and RLS are two different gates, and you need both.** `GRANT` decides whether the `authenticated` role may issue the statement at all; RLS decides which rows come back. The schema grants `select, insert, update, delete` on `contacts` to `authenticated` and revokes everything from `anonymous`, so a signed-out caller is refused before RLS is even consulted."
+      },
+      {
+        "label": "S7",
+        "id": "haas-class2#035",
+        "path": "vault/raw/course-slides/haas-class2.html",
+        "locator": "slide 46: The Assignment (part: Cloud Platforms)",
+        "bm25": 16.399,
+        "cosine": 0.2655,
+        "rrf": 0.02525,
+        "matched_terms": [
+          "app",
+          "contact",
+          "network",
+          "one",
+          "sign",
+          "user"
+        ],
+        "text": "The Assignment\n\nImportant\n\nBuild a networking tracker: a website to record the people you need to network with at Berkeley.\n\n- Sign in before using the app\n\n- Add, view, edit, and delete your own contacts\n\n- Keep every user’s contacts private from every other user\n\n- Validate inputs and include at least one automated test\n\n- Deployed live on the internet\n\n- Submit one public GitHub repository URL with all grading evidence in its README\n\nStack: Next.js + Supabase + Vercel\n\nFull assignment guide\n\nOpen Google Doc ↗\n\nREADME, setup, authentication, RLS, testing, deployment, and submission evidence."
+      },
+      {
+        "label": "S8",
+        "id": "haas-class2#029",
+        "path": "vault/raw/course-slides/haas-class2.html",
+        "locator": "slide 37: Why Authentication Matters (part: Authentication)",
+        "bm25": 8.173,
+        "cosine": 0.2932,
+        "rrf": 0.02212,
+        "matched_terms": [
+          "app",
+          "one",
+          "user"
+        ],
+        "text": "Why Authentication Matters\n\nWithout authentication, anyone can access anyone’s data. Your app has no idea who is making a request.\n\nAuthentication answers one question: “Are you who you say you are?”\n\nImportant\n\nIf you build a prototype with no auth, every user can see every other user’s data. This is the #1 mistake in vibecoded apps."
+      },
+      {
+        "label": "S9",
+        "id": "haas-class1#090",
+        "path": "vault/raw/course-slides/haas-class1.html",
+        "locator": "slide 101: Ports: Apartment Numbers for One Address (part: Localhost: Running Software on Your Own Machine)",
+        "bm25": 7.886,
+        "cosine": 0.2572,
+        "rrf": 0.02084,
+        "matched_terms": [
+          "different",
+          "one",
+          "stop"
+        ],
+        "text": "Ports: Apartment Numbers for One Address\n\nOne computer runs many programs at once. The port says which one you are talking to.\n\nAddress\n\nWho usually lives there\n\nlocalhost:8000\n\nPython’s built-in web server\n\nlocalhost:3000\n\nA Node / React / Next.js dev server\n\nlocalhost:5432\n\nA PostgreSQL database\n\nlocalhost:11434\n\nOllama, running an LLM on your own machine\n\nThe address is the building; the port is the apartment. Address already in use means someone is already home — use a different port, or stop the program that’s squatting there."
+      },
+      {
+        "label": "S10",
+        "id": "haas-class2#036",
+        "path": "vault/raw/course-slides/haas-class2.html",
+        "locator": "slide 47: Definition of Done: Your Rubric (part: Cloud Platforms)",
+        "bm25": 16.573,
+        "cosine": 0.1645,
+        "rrf": 0.02029,
+        "matched_terms": [
+          "account",
+          "app",
+          "contact",
+          "one",
+          "sign",
+          "user"
+        ],
+        "text": "Definition of Done: Your Rubric\n\nSubmit one public GitHub repository URL. Put the live URL and every evidence item below in its README.\n\nCheck\n\nEvidence\n\nThe app is live on a public URL\n\nREADME: live URL\n\nA user can sign in and sign out\n\nREADME: screenshot or recording\n\nYou can add, view, edit, delete a contact and it survives refresh\n\nREADME: screenshot or recording\n\nUser A cannot see or change User B’s contacts\n\nREADME: two-account test evidence\n\nOne invalid input fails safely (empty name, bad priority)\n\nREADME: error screenshot\n\nAt least one automated test passes\n\nREADME: test output\n\nSecret keys are in server-only environment settings, not frontend code\n\nREADME: publishable versus secret-key explanation\n\nYou can explain the schema and RLS ownership rule\n\nREADME: schema and user_id ownership rule\n\nTip\n\nThe security, test, and explanation rows are the difference between “an AI built me a demo” and “I shipped software I understand.”"
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "instructions/wiki-instructions.md",
+    "passage_chars": 7878,
+    "chat_history_included": false,
+    "persona_included": false
+  },
+  "model_called": true,
+  "answer": "A user's rows are isolated from every other user's by Row Level Security inside Postgres itself, not by a `WHERE` clause in application code [S5]. The database extracts the caller's identity from a signed JWT and filters rows before any query returns, so even a caller who bypasses the app entirely and hits the public Data API directly can only ever see their own data [S5]. Furthermore, the `UPDATE` policy requires both `USING` and `WITH CHECK` to prevent a user from changing a row so it belongs to someone else, as `USING` alone would allow taking one's own contact and setting the `user_id` to another person's ID [S6].",
+  "citation_check": {
+    "verdict": "citations_check_passed",
+    "labels_used": [
+      "S5",
+      "S6"
+    ],
+    "invalid_labels": [],
+    "sentences": [
+      {
+        "sentence": "A user's rows are isolated from every other user's by Row Level Security inside Postgres itself, not by a `WHERE` clause in application code [S5].",
+        "labels": [
+          "S5"
+        ],
+        "word_overlap_with_cited": 1.0
+      },
+      {
+        "sentence": "The database extracts the caller's identity from a signed JWT and filters rows before any query returns, so even a caller who bypasses the app entirely and hits the public Data API directly can only ever see their own data [S5].",
+        "labels": [
+          "S5"
+        ],
+        "word_overlap_with_cited": 1.0
+      },
+      {
+        "sentence": "Furthermore, the `UPDATE` policy requires both `USING` and `WITH CHECK` to prevent a user from changing a row so it belongs to someone else, as `USING` alone would allow taking one's own contact and setting the `user_id` to another person's ID [S6].",
+        "labels": [
+          "S6"
+        ],
+        "word_overlap_with_cited": 0.71
+      }
+    ],
+    "uncited_sentences": [],
+    "unsupported_numbers": []
+  },
+  "stats": {
+    "model": "gemma4:e2b-it-qat",
+    "wall_seconds": 53.68,
+    "load_seconds": 0.0,
+    "prompt_tokens": 2695,
+    "prompt_seconds": 42.27,
+    "output_tokens": 147,
+    "output_seconds": 11.32,
+    "tokens_per_second": 12.98,
+    "done_reason": "stop"
+  }
+}

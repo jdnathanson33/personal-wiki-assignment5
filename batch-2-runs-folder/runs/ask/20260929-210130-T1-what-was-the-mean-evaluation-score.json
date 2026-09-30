@@ -1,0 +1,226 @@
+{
+  "mode": "ask",
+  "execution": "local",
+  "model": "gemma4:e2b-it-qat",
+  "embed_model": "embeddinggemma",
+  "internet_at_run_time": "ONLINE",
+  "timestamp": "2026-09-29T21:00:21",
+  "runtime": "ollama 0.35.0",
+  "model_digest": "07ea59a47401",
+  "model_quantization": "Q4_0",
+  "model_parameter_size": "4.6B",
+  "model_family": "gemma4",
+  "question": "What was the mean evaluation score of my Pac-Man DQN agent before and after training?",
+  "test": {
+    "id": "T1",
+    "type": "direct, one source",
+    "question": "What was the mean evaluation score of my Pac-Man DQN agent before and after training?",
+    "expected_behavior": "Answer 492.0 before and 604.0 after (+112.0), cited to the Pac-Man README.",
+    "expected_sources": [
+      "vault/raw/assignments/pacman-dqn-README.md"
+    ],
+    "expected_passages": [
+      "492.0 → 604.0"
+    ]
+  },
+  "retrieval": {
+    "method": "hybrid (bm25 + embeddinggemma, RRF)",
+    "note": "",
+    "scope": "raw",
+    "k": 8,
+    "max_bm25": 32.864,
+    "max_cosine": 0.7388,
+    "passages": [
+      {
+        "label": "S1",
+        "id": "pacman-dqn-readme#001",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI)",
+        "bm25": 32.864,
+        "cosine": 0.7388,
+        "rrf": 0.03279,
+        "matched_terms": [
+          "after",
+          "agent",
+          "dqn",
+          "evaluation",
+          "man",
+          "mean",
+          "pac",
+          "score",
+          "train"
+        ],
+        "text": "I trained the course's Deep Q-Network (DQN) on Atari Ms. Pac-Man. I changed only three settings: exploration, episodes, and learning rate. The untrained and trained agents were scored on the same five evaluation games.\n\n**Result:** the mean evaluation score went from **492.0 → 604.0 (+112.0)**. Most of that gain comes from one strong game (1,420); three of the five games scored lower after training. So this run shows limited learning, not a clear improvement."
+      },
+      {
+        "label": "S2",
+        "id": "pacman-dqn-readme#006",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > What I expected vs. what happened > Evaluation: all five games (comparison.json)",
+        "bm25": 25.337,
+        "cosine": 0.6802,
+        "rrf": 0.032,
+        "matched_terms": [
+          "after",
+          "before",
+          "dqn",
+          "evaluation",
+          "man",
+          "mean",
+          "pac"
+        ],
+        "text": "| Game (seed) | Before (untrained) | After (300 episodes) |\n|---|---:|---:|\n| 1 (101) | 350 | 310 |\n| 2 (202) | 500 | 410 |\n| 3 (303) | 320 | **1,420** |\n| 4 (404) | 800 | 290 |\n| 5 (505) | 490 | 590 |\n| **Mean** | **492.0** | **604.0** |\n\nNo game reached the time limit, before or after. Every game ended at game over."
+      },
+      {
+        "label": "S3",
+        "id": "pacman-dqn-readme#012",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > Next experiment",
+        "bm25": 22.734,
+        "cosine": 0.6658,
+        "rrf": 0.03125,
+        "matched_terms": [
+          "before",
+          "dqn",
+          "evaluation",
+          "man",
+          "mean",
+          "pac",
+          "train"
+        ],
+        "text": "**Change only the number of episodes, from 300 to 1,000**, and keep exploration at 0.10 and the learning rate at 0.0001. The 25-game average was still swinging at the end of this run (about 940 at episode 272, 670 at episode 300), and 43k updates is small for Atari. A DQN typically needs far more experience before it learns to avoid ghosts reliably. Keeping the other two settings fixed means any change in the five evaluation scores can be attributed to the training budget."
+      },
+      {
+        "label": "S4",
+        "id": "pacman-dqn-readme#003",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > My three settings",
+        "bm25": 20.527,
+        "cosine": 0.6543,
+        "rrf": 0.0303,
+        "matched_terms": [
+          "agent",
+          "dqn",
+          "evaluation",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "| Setting | Value | Why |\n|---|---|---|\n| Exploration | **0.10** | This is close to the final exploration level in standard DQN. The agent still tries new routes, but training play (10% random) stays close to evaluation play (5% random). The default of 0.20 wastes many lives on random moves. |\n| Episodes | **300** | A real training budget that fit in about 33 minutes on CPU. It also produces 12 intermediate GIFs and checkpoints. |\n| Learning rate | **0.0001** | The standard, stable Adam learning rate for DQN (and the notebook's reference value). I kept it so the run would not diverge. |\n\nAll other settings were left at the notebook's fixed values. Evaluation was unchanged: seeds 101/202/303/404/505, 5% exploration, and a limit of 3,000 decisions per game. See [`config.json`](results/config.json)."
+      },
+      {
+        "label": "S5",
+        "id": "pacman-dqn-readme#004",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > What I expected vs. what happened",
+        "bm25": 17.665,
+        "cosine": 0.7121,
+        "rrf": 0.03021,
+        "matched_terms": [
+          "agent",
+          "dqn",
+          "man",
+          "mean",
+          "pac",
+          "train"
+        ],
+        "text": "**Expected:** a modest improvement. With low exploration and a stable learning rate, I expected the agent to learn to clear more pellets than the untrained network. I did not expect expert play from 300 games with a 5,000-decision replay memory.\n\n**Observed:**\n\n- **Training scores improved a little, and noisily.** The 25-game average rose from about 500 (episode 25) to about 860 (episode 75). It then slipped back to roughly 540–690 between episodes 175 and 250, peaked again near 940 around episode 272, and finished at about 670.\n\n- **Best single training game:** 4,310 at episode 272.\n\n- **50-episode means:** 546 → 777 → 743 → 636 → 594 → 796.\n\n- **Loss went up, not down.** It climbed from about 0.02 to about 0.10–0.16 and ended near 0.09. This is common in DQN: as the agent reaches more rewarding situations, its value targets get larger and change more. It shows that lower loss is not the same thing as better play."
+      },
+      {
+        "label": "S6",
+        "id": "haas-class3#068",
+        "path": "vault/raw/course-slides/haas-class3.html",
+        "locator": "slide 71: Show What the Agent Actually Learned (part: End Project: Pac-Man DQN)",
+        "bm25": 22.204,
+        "cosine": 0.5701,
+        "rrf": 0.02988,
+        "matched_terms": [
+          "after",
+          "agent",
+          "dqn",
+          "evaluation",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "Show What the Agent Actually Learned\n\nPac-Man project on GitHub → · Open in Google Colab → · Assignment instructions (Google Doc) →\n\nYour repository should include:\n\n- Your notebook and the three hyperparameters you chose.\n\n- An untrained GIF, later checkpoints, and your best gameplay GIF.\n\n- A training plot and a comparison of five evaluation games with the untrained baseline, using the same evaluation settings.\n\n- A short explanation of the state, actions, reward, and one observed limitation.\n\nLower DQN loss does not guarantee better play. Learning speed varies; report what happened, including failed runs.\n\nSubmit your GitHub repository →\n\nRetain the existing submission destination and core screenshot/GIF deliverables. Evaluation is needed to support any claim of improvement; the best GIF alone is selective evidence. Several games give a small comparison, not a robust research estimate. Do not promise competent play after 300 episodes or a particular laptop runtime. Source for DQN mechanism: https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf"
+      },
+      {
+        "label": "S7",
+        "id": "haas-class3#067",
+        "path": "vault/raw/course-slides/haas-class3.html",
+        "locator": "slide 70: Train an Agent to Play Ms. Pac-Man (part: End Project: Pac-Man DQN)",
+        "bm25": 23.889,
+        "cosine": 0.557,
+        "rrf": 0.02976,
+        "matched_terms": [
+          "after",
+          "agent",
+          "before",
+          "dqn",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "Train an Agent to Play Ms. Pac-Man\n\nOpen the Pac-Man project on GitHub →\n\nOpen the notebook in Google Colab →\n\nRun it in Google Colab, or clone the project for Jupyter or VS Code.\n\n- Choose exploration, episodes, and learning rate.\n\n- Select Run All to train the ready-made agent.\n\n- Watch gameplay and compare the before/after scores.\n\nUsing Claude Code or Codex? The notebook tells it to ask for your three choices before training.\n\nThe notebook is self-contained and installs its dependencies. Exploration is a fixed random-action probability after a short warm-up. Start with five episodes to check setup; longer training does not guarantee good play. The public GitHub repository is the canonical project source, and the Colab link opens its main-branch notebook directly."
+      },
+      {
+        "label": "S8",
+        "id": "pacman-dqn-readme#005",
+        "path": "vault/raw/assignments/pacman-dqn-README.md",
+        "locator": "Ms. Pac-Man DQN — Assignment 2 (Fundamentals of Agentic AI) > What I expected vs. what happened",
+        "bm25": 18.071,
+        "cosine": 0.656,
+        "rrf": 0.02967,
+        "matched_terms": [
+          "agent",
+          "before",
+          "dqn",
+          "man",
+          "pac",
+          "train"
+        ],
+        "text": "…agent reaches more rewarding situations, its value targets get larger and change more. It shows that lower loss is not the same thing as better play.\n\n- **The periodic single-game demo (seed 101) did not improve steadily.** Scores by episode: 25 → 920, 50 → 860, 75 → 840, 100 → 700, 125 → 1,250, 150 → 530, 175 → 460, 200 → 170, 225 → 610, 250 → 270, 275 → 530, 300 → 310. The agent's quality swung from one checkpoint to the next. The episode-125 checkpoint looked stronger on this one game than the final model.\n\n- **Gameplay:** in the first 20 seconds, the untrained and best trained GIFs look similar. Both collect pellets along corridors and lose a life to a ghost fairly early. The trained agent did not visibly avoid ghosts. Trained games were also shorter on average: 535 decisions vs. 589 before."
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "instructions/wiki-instructions.md",
+    "passage_chars": 5655,
+    "chat_history_included": false,
+    "persona_included": false
+  },
+  "model_called": true,
+  "answer": "The mean evaluation score went from 492.0 before training to 604.0 after training [S1][S2].",
+  "citation_check": {
+    "verdict": "citations_check_passed",
+    "labels_used": [
+      "S1",
+      "S2"
+    ],
+    "invalid_labels": [],
+    "sentences": [
+      {
+        "sentence": "The mean evaluation score went from 492.0 before training to 604.0 after training [S1][S2].",
+        "labels": [
+          "S1",
+          "S2"
+        ],
+        "word_overlap_with_cited": 1.0
+      }
+    ],
+    "uncited_sentences": [],
+    "unsupported_numbers": []
+  },
+  "stats": {
+    "model": "gemma4:e2b-it-qat",
+    "wall_seconds": 69.36,
+    "load_seconds": 15.31,
+    "prompt_tokens": 2279,
+    "prompt_seconds": 51.23,
+    "output_tokens": 31,
+    "output_seconds": 2.75,
+    "tokens_per_second": 11.29,
+    "done_reason": "stop"
+  }
+}

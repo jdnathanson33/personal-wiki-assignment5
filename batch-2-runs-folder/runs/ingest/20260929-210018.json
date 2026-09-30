@@ -1,0 +1,50 @@
+{
+  "run_id": "20260929-210018",
+  "command": "wiki ingest vault/raw/assignments/pacman-dqn-README.md",
+  "model": "gemma4:e2b-it-qat",
+  "execution": "local",
+  "force": false,
+  "sources": [
+    {
+      "id": "pacman-dqn-readme",
+      "path": "raw/assignments/pacman-dqn-README.md",
+      "sha256": "9a9a849ffbe3379fc03b0f537c8c93c6a5bfc6e8ee8d68c7f8e8caf04e7dc70d",
+      "changed_since_last": false
+    }
+  ],
+  "notes": [
+    {
+      "title": "Pac-Man DQN Agent",
+      "path": "vault/wiki/Projects/Pac-Man DQN Agent.md",
+      "action": "up to date"
+    },
+    {
+      "title": "Deep Q-Networks",
+      "path": "vault/wiki/Concepts/Deep Q-Networks.md",
+      "action": "up to date"
+    },
+    {
+      "title": "Training Loss Curves",
+      "path": "vault/wiki/Concepts/Training Loss Curves.md",
+      "action": "up to date"
+    },
+    {
+      "title": "Evaluation Design",
+      "path": "vault/wiki/Concepts/Evaluation Design.md",
+      "action": "up to date"
+    }
+  ],
+  "errors": [],
+  "retrieval_index": {
+    "passages": 689,
+    "raw_passages": 547,
+    "wiki_passages": 142,
+    "embedded": 689,
+    "reused_vectors": 689,
+    "note": ""
+  },
+  "lint": [],
+  "note_count": 38,
+  "duplicate_names": [],
+  "seconds": 1.8
+}

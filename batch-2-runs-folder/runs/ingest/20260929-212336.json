@@ -1,0 +1,110 @@
+{
+  "run_id": "20260929-212336",
+  "command": "wiki ingest vault/raw/assignments/pacman-dqn-README.md",
+  "model": "gemma4:e2b-it-qat",
+  "execution": "local",
+  "force": true,
+  "sources": [
+    {
+      "id": "pacman-dqn-readme",
+      "path": "raw/assignments/pacman-dqn-README.md",
+      "sha256": "9a9a849ffbe3379fc03b0f537c8c93c6a5bfc6e8ee8d68c7f8e8caf04e7dc70d",
+      "changed_since_last": false
+    }
+  ],
+  "notes": [
+    {
+      "title": "Pac-Man DQN Agent",
+      "path": "vault/wiki/Projects/Pac-Man DQN Agent.md",
+      "excerpts_sent": 9,
+      "excerpt_chars": 7073,
+      "stats": {
+        "model": "gemma4:e2b-it-qat",
+        "wall_seconds": 73.11,
+        "load_seconds": 10.71,
+        "prompt_tokens": 2603,
+        "prompt_seconds": 41.67,
+        "output_tokens": 285,
+        "output_seconds": 20.57,
+        "tokens_per_second": 13.85,
+        "done_reason": "stop"
+      },
+      "raw_output": "SUMMARY: The Pac-Man DQN Agent was trained on the Ms. Pac-Man Atari environment, where changes to exploration, episodes, and learning rate were tested. The agent showed a mean evaluation score increase from 492.0 to 604.0, but the learning process was noisy and unstable.\nDETAILS:\n- The agent was trained using three settings: Exploration at 0.10, Episodes at 300, and Learning rate at 0.0001 [E2].\n- The training budget consisted of 300 episodes, which took approximately 1,996 seconds (about 33 minutes) on a CPU with no GPU [E7].\n- The mean evaluation score improved from 492.0 (untrained) to 604.0 (trained) across five evaluation games [E1, E4].\n- A limitation observed was that evaluation is small and noisy, as the +112.0 improvement came almost entirely from one game (seed 303), and three games scored lower after training [E8].\n- The next experiment planned is to change only the number of episodes from 300 to 1,000, keeping exploration at 0.10 and the learning rate at 0.0001 [E9].",
+      "action": "draft saved; reviewed note kept",
+      "draft": "runs/ingest/20260929-212336/drafts/Pac-Man DQN Agent.md"
+    },
+    {
+      "title": "Deep Q-Networks",
+      "path": "vault/wiki/Concepts/Deep Q-Networks.md",
+      "excerpts_sent": 4,
+      "excerpt_chars": 3143,
+      "stats": {
+        "model": "gemma4:e2b-it-qat",
+        "wall_seconds": 32.69,
+        "load_seconds": 0.01,
+        "prompt_tokens": 1049,
+        "prompt_seconds": 15.25,
+        "output_tokens": 255,
+        "output_seconds": 17.37,
+        "tokens_per_second": 14.68,
+        "done_reason": "stop"
+      },
+      "raw_output": "SUMMARY: Deep Q-Networks (DQN) use a neural network to estimate action values instead of a traditional Q-table, allowing the agent to learn from visual inputs of game screens. This approach involves using frame stacking, experience replay, and a target network to stabilize training.\nDETAILS:\n- DQN uses a neural network in place of a Q-table to estimate Q-values based on input frames [E1].\n- Pac-Man DQN observes the last four game screens, shrunk to 84 × 84 grayscale, to determine movement [E3].\n- The agent has 9 joystick moves: no-op, up, right, left, down, and the four diagonals, with each choice held for 4 game frames [E3].\n- Rewards are clipped to between −1 and +1 during training, meaning the agent learns \"points or no points\" [E3].\n- Experience replay samples past transitions to reduce correlation and reuse experience [E2].\n- A target network provides a slower-changing target for value updates [E2].\n- Evaluation is small and noisy, and the agent is unstable, with improvement coming almost entirely from one game (seed 303) [E4].",
+      "action": "draft saved; reviewed note kept",
+      "draft": "runs/ingest/20260929-212336/drafts/Deep Q-Networks.md"
+    },
+    {
+      "title": "Training Loss Curves",
+      "path": "vault/wiki/Concepts/Training Loss Curves.md",
+      "excerpts_sent": 5,
+      "excerpt_chars": 5035,
+      "stats": {
+        "model": "gemma4:e2b-it-qat",
+        "wall_seconds": 53.69,
+        "load_seconds": 0.0,
+        "prompt_tokens": 2103,
+        "prompt_seconds": 30.06,
+        "output_tokens": 333,
+        "output_seconds": 23.58,
+        "tokens_per_second": 14.12,
+        "done_reason": "stop"
+      },
+      "raw_output": "SUMMARY: Training loss curves in Pac-Man DQN showed that lower loss does not necessarily equate to better results, as the loss climbed in some instances while performance fluctuated. Similarly, for nanoGPT, loss flattening after an initial drop suggests a floor due to random token filling, and losses from different experiments cannot be directly compared.\nDETAILS:\n- In Pac-Man DQN, the training loss climbed from about 0.02 to about 0.10–0.16 and ended near 0.09, indicating that lower loss is not the same as better play because value targets get larger and change more as the agent reaches more rewarding situations [E1].\n- For Pac-Man DQN, the periodic single-game demo showed the agent's quality swung from one checkpoint to the next, with the episode-125 checkpoint looking stronger on one game than the final model [E1].\n- In Pac-Man DQN evaluation, the mean score after 300 episodes was 604.0, compared to 492.0 before training [E2].\n- For nanoGPT, the training-panel loss fell by about 86% by the halfway point and then flattened, which is expected because classroom sentences have slots filled at random [E5].\n- Validation loss in nanoGPT stayed close to training loss, which rules out heavy memorization of individual sentences, but it does not show generalization beyond the templates used [E5].\n- Losses from the Starter and Expanded nanoGPT experiments cannot be compared because they use different corpora and vocabularies [E5].",
+      "action": "draft saved; reviewed note kept",
+      "draft": "runs/ingest/20260929-212336/drafts/Training Loss Curves.md"
+    },
+    {
+      "title": "Evaluation Design",
+      "path": "vault/wiki/Concepts/Evaluation Design.md",
+      "excerpts_sent": 5,
+      "excerpt_chars": 5868,
+      "stats": {
+        "model": "gemma4:e2b-it-qat",
+        "wall_seconds": 57.5,
+        "load_seconds": 0.0,
+        "prompt_tokens": 2279,
+        "prompt_seconds": 33.54,
+        "output_tokens": 332,
+        "output_seconds": 23.91,
+        "tokens_per_second": 13.89,
+        "done_reason": "stop"
+      },
+      "raw_output": "SUMMARY: Evaluation design in this work involves testing models using fixed seeds and evaluation suites, analyzing results from small noisy samples, and considering changes based on observed limitations. This process is applied across different domains, such as reinforcement learning and language modeling, to assess performance.\nDETAILS:\n- For Pac-Man DQN, evaluation involved comparing performance across five games with different seeds, showing a mean improvement from 492.0 to 604.0 after 300 episodes [E1].\n- Evaluation in the Pac-Man DQN context was limited because the samples were small and noisy, meaning five games could not reliably distinguish real learning from luck [E2].\n- To test the impact of training budget, the number of episodes was changed from 300 to 1,000 while keeping exploration at 0.10 and the learning rate at 0.0001, noting that 43k updates was small for Atari [E3].\n- For nanoGPT, public development tests were used to choose extension categories, and the results showed that trained models achieved 29 correct out of 29 scorable cases [E4].\n- A limitation observed in nanoGPT was that the model's knowledge was tied to template slots, as new frames interfered with old ones, causing free text to blend contrast frames into sentences [E5].\n- A proposed next experiment for nanoGPT involves adding a held-out set of new spatial and opposites prompts and using 3 seeds per corpus to test if gains are a real pattern or due to a lucky run [E5].",
+      "action": "draft saved; reviewed note kept",
+      "draft": "runs/ingest/20260929-212336/drafts/Evaluation Design.md"
+    }
+  ],
+  "errors": [],
+  "retrieval_index": {
+    "passages": 689,
+    "raw_passages": 547,
+    "wiki_passages": 142,
+    "embedded": 689,
+    "reused_vectors": 689,
+    "note": ""
+  },
+  "lint": [],
+  "note_count": 38,
+  "duplicate_names": [],
+  "seconds": 218.9
+}
