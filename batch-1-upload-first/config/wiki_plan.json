@@ -1,0 +1,1547 @@
+{
+ "_comment": "Curated wiki structure. Edit titles/sections/links here; `wiki ingest` drafts note text with Gemma.",
+ "sources": [
+  {
+   "id": "networking-tracker-readme",
+   "path": "raw/assignments/networking-tracker-README.md",
+   "label": "Networking Tracker README",
+   "public": true,
+   "original_filename": "README.md",
+   "origin": "my repo github.com/jdnathanson33/berkeley-networking-tracker"
+  },
+  {
+   "id": "pacman-dqn-readme",
+   "path": "raw/assignments/pacman-dqn-README.md",
+   "label": "Pac-Man DQN README",
+   "public": true,
+   "original_filename": "README.md",
+   "origin": "my repo github.com/jdnathanson33/pacman-dqn-assignment2"
+  },
+  {
+   "id": "custom-llm-readme",
+   "path": "raw/assignments/custom-llm-README.md",
+   "label": "nanoGPT README",
+   "public": true,
+   "original_filename": "custom-llm-assignment4/README.md",
+   "origin": "my repo github.com/jdnathanson33/custom-llm-assignment4"
+  },
+  {
+   "id": "class1-slides",
+   "path": "raw/course-slides/haas-class1.html",
+   "label": "Class 1 slides (Code & Programming Foundations)",
+   "public": false,
+   "url": "https://haas-ai-classes-fall-26.vercel.app/class1.html",
+   "original_filename": "class1.html",
+   "origin": "course site https://haas-ai-classes-fall-26.vercel.app/class1.html (instructor's slides; local copy only)"
+  },
+  {
+   "id": "class2-slides",
+   "path": "raw/course-slides/haas-class2.html",
+   "label": "Class 2 slides (Software Systems)",
+   "public": false,
+   "url": "https://haas-ai-classes-fall-26.vercel.app/class2.html",
+   "original_filename": "class2.html",
+   "origin": "course site https://haas-ai-classes-fall-26.vercel.app/class2.html (instructor's slides; local copy only)"
+  },
+  {
+   "id": "class3-slides",
+   "path": "raw/course-slides/haas-class3.html",
+   "label": "Class 3 slides (Machine Learning Foundations)",
+   "public": false,
+   "url": "https://haas-ai-classes-fall-26.vercel.app/class3.html",
+   "original_filename": "class3.html",
+   "origin": "course site https://haas-ai-classes-fall-26.vercel.app/class3.html (instructor's slides; local copy only)"
+  },
+  {
+   "id": "class4-slides",
+   "path": "raw/course-slides/haas-class4.html",
+   "label": "Class 4 slides (Deep Learning, Embeddings & Transformers)",
+   "public": false,
+   "url": "https://haas-ai-classes-fall-26.vercel.app/class4.html",
+   "original_filename": "class4.html",
+   "origin": "course site https://haas-ai-classes-fall-26.vercel.app/class4.html (instructor's slides; local copy only)"
+  },
+  {
+   "id": "class5-slides",
+   "path": "raw/course-slides/haas-class5.html",
+   "label": "Class 5 slides (LLM Behavior, Prompting & Retrieval)",
+   "public": false,
+   "url": "https://haas-ai-classes-fall-26.vercel.app/class5.html",
+   "original_filename": "class5.html",
+   "origin": "course site https://haas-ai-classes-fall-26.vercel.app/class5.html (instructor's slides; local copy only)"
+  }
+ ],
+ "notes": [
+  {
+   "title": "Fundamentals of Agentic AI",
+   "folder": "Course",
+   "focus": "What the course covers class by class and how the assignments fit. Name each class and its main topics.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class1.html",
+     "sections": [
+      "^slide 1:",
+      "agenda"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "^slide 1:",
+      "agenda"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class3.html",
+     "sections": [
+      "^slide 1:",
+      "route"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class4.html",
+     "sections": [
+      "^slide 1:",
+      "roadmap"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "^slide 1:",
+      "what this class gives you"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 1 - Code Foundations",
+     "why": "first class: code, terminal, Git, localhost, AI coding agents"
+    },
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "second class: frontend, backend, databases, auth, deployment"
+    },
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "third class: training, evaluation, reinforcement learning"
+    },
+    {
+     "title": "Class 4 - Deep Learning and Transformers",
+     "why": "fourth class: neural networks, embeddings, attention"
+    },
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "fifth class: prompting, context, hallucination, RAG"
+    },
+    {
+     "title": "Networking Tracker",
+     "why": "project built after Class 2"
+    },
+    {
+     "title": "Pac-Man DQN Agent",
+     "why": "project built after Class 3"
+    },
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "project built after Class 4"
+    },
+    {
+     "title": "Personal Wiki Project",
+     "why": "this wiki, the Class 5 project"
+    }
+   ]
+  },
+  {
+   "title": "Class 1 - Code Foundations",
+   "folder": "Course",
+   "focus": "The goals, main topics, key takeaways, and the Discount Engine exercise of Class 1.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class1.html",
+     "sections": [
+      "what success looks like",
+      "agenda",
+      "key takeaway",
+      "the goal of this class",
+      "definition of done",
+      "the brief"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Git and GitHub",
+     "why": "version control taught in this class"
+    },
+    {
+     "title": "Localhost and Ports",
+     "why": "running software locally, taught in this class"
+    },
+    {
+     "title": "Clean Code",
+     "why": "code organization taught in this class"
+    },
+    {
+     "title": "AI Coding Agents",
+     "why": "Claude Code and Codex, introduced in this class"
+    },
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "next class"
+    }
+   ]
+  },
+  {
+   "title": "Class 2 - Software Systems",
+   "folder": "Course",
+   "focus": "How a program becomes a product: the product stack, frontend, backend, databases, authentication, cloud deployment, and the assignment.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "from a program to a product",
+      "the product stack",
+      "agenda",
+      "what is a tech stack",
+      "the assignment",
+      "definition of done"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "APIs and HTTP",
+     "why": "backend concept from this class"
+    },
+    {
+     "title": "Databases and SQL",
+     "why": "data layer from this class"
+    },
+    {
+     "title": "Authentication and Sessions",
+     "why": "auth from this class"
+    },
+    {
+     "title": "Cloud Deployment",
+     "why": "deployment from this class"
+    },
+    {
+     "title": "Networking Tracker",
+     "why": "the assignment for this class"
+    },
+    {
+     "title": "Class 1 - Code Foundations",
+     "why": "previous class"
+    },
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "next class"
+    }
+   ]
+  },
+  {
+   "title": "Class 3 - Machine Learning",
+   "folder": "Course",
+   "focus": "Why machine learning, how a model is trained, generalization, evaluation, unsupervised and reinforcement learning, and the Pac-Man project.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class3.html",
+     "sections": [
+      "why ai instead of code",
+      "last class we wrote the rules",
+      "route",
+      "three ways a machine can learn",
+      "train an agent to play",
+      "show what the agent actually learned"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Model Training and Gradient Descent",
+     "why": "core training idea from this class"
+    },
+    {
+     "title": "Overfitting and Generalization",
+     "why": "model choice from this class"
+    },
+    {
+     "title": "Precision and Recall",
+     "why": "evaluation from this class"
+    },
+    {
+     "title": "Reinforcement Learning",
+     "why": "RL from this class"
+    },
+    {
+     "title": "Pac-Man DQN Agent",
+     "why": "the assignment for this class"
+    },
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "previous class"
+    },
+    {
+     "title": "Class 4 - Deep Learning and Transformers",
+     "why": "next class"
+    }
+   ]
+  },
+  {
+   "title": "Class 4 - Deep Learning and Transformers",
+   "folder": "Course",
+   "focus": "From hand-designed features to learned representations: neural networks, embeddings, attention, transformers, and the tiny LLM assignment.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class4.html",
+     "sections": [
+      "from hand-designed features",
+      "the limitation of classic ml",
+      "roadmap",
+      "a fluent answer is still a prediction",
+      "assignment 3",
+      "run it, then inspect"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Neural Networks",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Tokens and Embeddings",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Transformer Attention",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "the assignment for this class"
+    },
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "previous class"
+    },
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "next class"
+    }
+   ]
+  },
+  {
+   "title": "Class 5 - LLMs Prompting and Retrieval",
+   "folder": "Course",
+   "focus": "LLM behavior, fine-tuning vs prompting, context windows, thinking models, hallucination, RAG, and the personal wiki assignment.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "what this class gives you",
+      "=slide 6: agenda",
+      "three levers, three jobs",
+      "the golden rule",
+      "four defenses",
+      "retrieval augmented generation (rag)",
+      "build your personal wiki"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Prompt Engineering",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Context Windows",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Fine-Tuning and LoRA",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Hallucination",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Retrieval Augmented Generation",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Local Open Models",
+     "why": "covered in this class"
+    },
+    {
+     "title": "Personal Wiki Project",
+     "why": "the assignment for this class"
+    },
+    {
+     "title": "Class 4 - Deep Learning and Transformers",
+     "why": "previous class"
+    }
+   ]
+  },
+  {
+   "title": "Networking Tracker",
+   "folder": "Projects",
+   "focus": "What I built (a private contact tracker), the stack I used and why, how it was tested and deployed, and its known limitations.",
+   "sources": [
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "#intro",
+      "features",
+      "technology stack",
+      "what the tests verify",
+      "known limitations"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "the assignment"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Row Level Security",
+     "why": "how the app isolates each user's rows"
+    },
+    {
+     "title": "Authentication and Sessions",
+     "why": "how sign-in reaches the database"
+    },
+    {
+     "title": "Secrets and Environment Variables",
+     "why": "which values stay server-only"
+    },
+    {
+     "title": "Testing and CI",
+     "why": "the 30 automated tests"
+    },
+    {
+     "title": "Cloud Deployment",
+     "why": "deployed on Vercel"
+    },
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "the class this assignment came from"
+    }
+   ]
+  },
+  {
+   "title": "Pac-Man DQN Agent",
+   "folder": "Projects",
+   "focus": "My three settings, the before/after evaluation scores, the training budget, one limitation, and the next experiment.",
+   "sources": [
+    {
+     "path": "raw/assignments/pacman-dqn-README.md",
+     "sections": [
+      "#intro",
+      "my three settings",
+      "what i expected",
+      "evaluation: all five games",
+      "actual training budget",
+      "one limitation",
+      "next experiment"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Deep Q-Networks",
+     "why": "the algorithm the agent uses"
+    },
+    {
+     "title": "Reinforcement Learning",
+     "why": "the learning setting"
+    },
+    {
+     "title": "Training Loss Curves",
+     "why": "loss went up while play barely improved"
+    },
+    {
+     "title": "Evaluation Design",
+     "why": "five games were too few to separate learning from luck"
+    },
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "the class this assignment came from"
+    }
+   ]
+  },
+  {
+   "title": "Tiny nanoGPT Model",
+   "folder": "Projects",
+   "focus": "The two tiny word-level models I trained, my settings and predictions, the eval results, the chat interface, and the limitation.",
+   "sources": [
+    {
+     "path": "raw/assignments/custom-llm-README.md",
+     "sections": [
+      "#intro",
+      "four-row comparison",
+      "my choices and prediction",
+      "the runs",
+      "chat interface",
+      "one limitation"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Tokens and Embeddings",
+     "why": "traced token ids and embedding vectors"
+    },
+    {
+     "title": "Transformer Attention",
+     "why": "the model's 2 transformer blocks"
+    },
+    {
+     "title": "Sampling Temperature",
+     "why": "temperature comparison in the notebook"
+    },
+    {
+     "title": "Training Loss Curves",
+     "why": "loss evidence for both runs"
+    },
+    {
+     "title": "Evaluation Design",
+     "why": "48 fixed eval cases, public development tests"
+    },
+    {
+     "title": "Class 4 - Deep Learning and Transformers",
+     "why": "the class this assignment came from"
+    }
+   ]
+  },
+  {
+   "title": "Personal Wiki Project",
+   "folder": "Projects",
+   "focus": "The Class 5 assignment: a personal wiki with a local model, retrieval, and chat/ask/search modes.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "build your personal wiki",
+      "open models & running locally"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Fundamentals of Agentic AI",
+     "why": "course map"
+    },
+    {
+     "title": "Retrieval Augmented Generation",
+     "why": "ask mode is a RAG workflow"
+    },
+    {
+     "title": "Local Open Models",
+     "why": "runs Gemma locally"
+    },
+    {
+     "title": "Context Windows",
+     "why": "passages must fit the context window"
+    },
+    {
+     "title": "Hallucination",
+     "why": "citations and insufficient-evidence answers are the defense"
+    },
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "the class this assignment came from"
+    }
+   ]
+  },
+  {
+   "title": "Git and GitHub",
+   "folder": "Concepts",
+   "focus": "What Git, repositories, branches, commits, diffs and pull requests are, and the workflow.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class1.html",
+     "sections": [
+      "part: git, github"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 1 - Code Foundations",
+     "why": "taught here"
+    },
+    {
+     "title": "AI Coding Agents",
+     "why": "agents need the same review discipline"
+    },
+    {
+     "title": "Secrets and Environment Variables",
+     "why": "never commit secrets"
+    }
+   ]
+  },
+  {
+   "title": "Localhost and Ports",
+   "folder": "Concepts",
+   "focus": "What localhost and ports are, why a site is a process, and why localhost links only work on your machine.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class1.html",
+     "sections": [
+      "part: localhost"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "localhost is for testing"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 1 - Code Foundations",
+     "why": "taught here"
+    },
+    {
+     "title": "Cloud Deployment",
+     "why": "how software leaves localhost"
+    },
+    {
+     "title": "Local Open Models",
+     "why": "the local model server also runs on localhost"
+    }
+   ]
+  },
+  {
+   "title": "Clean Code",
+   "folder": "Concepts",
+   "focus": "Readability, guard clauses, named constants, one function one job, comments, and splitting projects by responsibility.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class1.html",
+     "sections": [
+      "part: clean code"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 1 - Code Foundations",
+     "why": "taught here"
+    },
+    {
+     "title": "AI Coding Agents",
+     "why": "reviewing what an AI writes"
+    },
+    {
+     "title": "Testing and CI",
+     "why": "tests make refactoring safe"
+    }
+   ]
+  },
+  {
+   "title": "AI Coding Agents",
+   "folder": "Concepts",
+   "focus": "Claude Code and Codex in the terminal, YOLO mode, plan mode, when not to use an agent, and reviewing an agent's diff.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class1.html",
+     "sections": [
+      "part: ai coding agents",
+      "reviewing what an ai writes"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "tip: use plan mode"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 1 - Code Foundations",
+     "why": "introduced here"
+    },
+    {
+     "title": "Git and GitHub",
+     "why": "diffs and pull requests are how agent work is reviewed"
+    },
+    {
+     "title": "Clean Code",
+     "why": "what to look for in generated code"
+    },
+    {
+     "title": "Prompt Engineering",
+     "why": "clear prompts improve agent output"
+    }
+   ]
+  },
+  {
+   "title": "APIs and HTTP",
+   "folder": "Concepts",
+   "focus": "APIs as agreements, HTTP methods, JSON, status codes, and never trusting incoming requests.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "apis: the waiter",
+      "an api is an agreement",
+      "http methods",
+      "json",
+      "never trust incoming",
+      "status codes",
+      "anatomy of an http request"
+     ]
+    },
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "request flow, in words"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "taught here"
+    },
+    {
+     "title": "Networking Tracker",
+     "why": "its /api routes follow this pattern"
+    },
+    {
+     "title": "Authentication and Sessions",
+     "why": "requests carry the session"
+    },
+    {
+     "title": "Databases and SQL",
+     "why": "the backend talks to the database"
+    }
+   ]
+  },
+  {
+   "title": "Databases and SQL",
+   "folder": "Concepts",
+   "focus": "Why apps need databases, tables and relationships, SQL, database types, and my contacts table.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "part: databases give apps memory"
+     ]
+    },
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "database schema",
+      "public.contacts"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "taught here"
+    },
+    {
+     "title": "Row Level Security",
+     "why": "Postgres enforces row ownership"
+    },
+    {
+     "title": "Networking Tracker",
+     "why": "uses Neon Postgres"
+    },
+    {
+     "title": "APIs and HTTP",
+     "why": "the API sits in front of the database"
+    }
+   ]
+  },
+  {
+   "title": "Authentication and Sessions",
+   "folder": "Concepts",
+   "focus": "Why authentication matters, how sign-in works, and how identity travels from the browser to Postgres in my app.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "part: authentication"
+     ]
+    },
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "how identity gets from the browser"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "taught here"
+    },
+    {
+     "title": "Row Level Security",
+     "why": "the database uses the verified identity to filter rows"
+    },
+    {
+     "title": "Secrets and Environment Variables",
+     "why": "the cookie secret must stay server-only"
+    },
+    {
+     "title": "Networking Tracker",
+     "why": "implemented with Neon Managed Better Auth"
+    }
+   ]
+  },
+  {
+   "title": "Row Level Security",
+   "folder": "Concepts",
+   "focus": "How Postgres RLS isolates each user's rows in my networking tracker: the four policies, USING vs WITH CHECK, grants, and the user_id default.",
+   "sources": [
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "the four policies",
+      "why user_id"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Networking Tracker",
+     "why": "where I applied it"
+    },
+    {
+     "title": "Authentication and Sessions",
+     "why": "RLS depends on a verified JWT"
+    },
+    {
+     "title": "Databases and SQL",
+     "why": "RLS is a Postgres feature"
+    }
+   ]
+  },
+  {
+   "title": "Secrets and Environment Variables",
+   "folder": "Concepts",
+   "focus": "Keeping secrets out of code: which environment variables are public or server-only and why.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "keep secrets out of your code"
+     ]
+    },
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "environment variables"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Networking Tracker",
+     "why": "its five environment variables"
+    },
+    {
+     "title": "Git and GitHub",
+     "why": "never commit secrets"
+    },
+    {
+     "title": "Cloud Deployment",
+     "why": "secrets are set per environment in Vercel"
+    }
+   ]
+  },
+  {
+   "title": "Testing and CI",
+   "folder": "Concepts",
+   "focus": "Tests as executable promises, CI/CD as a release gate, regression tests, the test pyramid, and my 30 tests.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class1.html",
+     "sections": [
+      "tests turn examples"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "ci/cd uses tests",
+      "regression tests",
+      "the test pyramid"
+     ]
+    },
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "what the tests verify"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Networking Tracker",
+     "why": "25 validation + 5 route-contract tests"
+    },
+    {
+     "title": "Cloud Deployment",
+     "why": "tests gate releases"
+    },
+    {
+     "title": "Clean Code",
+     "why": "tests make changes safe"
+    }
+   ]
+  },
+  {
+   "title": "Cloud Deployment",
+   "folder": "Concepts",
+   "focus": "What the cloud is, deploying an app, environments, rollback, and how I deployed on Vercel.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class2.html",
+     "sections": [
+      "part: cloud platforms",
+      "environments are intentionally",
+      "rollback"
+     ]
+    },
+    {
+     "path": "raw/assignments/networking-tracker-README.md",
+     "sections": [
+      "> deployment"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 2 - Software Systems",
+     "why": "taught here"
+    },
+    {
+     "title": "Networking Tracker",
+     "why": "deployed on Vercel"
+    },
+    {
+     "title": "Testing and CI",
+     "why": "tests as a release gate"
+    },
+    {
+     "title": "Localhost and Ports",
+     "why": "local vs deployed"
+    }
+   ]
+  },
+  {
+   "title": "Model Training and Gradient Descent",
+   "folder": "Concepts",
+   "focus": "Parameters, loss, and gradient descent: how a model improves from a poor first guess.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class3.html",
+     "sections": [
+      "part: training a model"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "taught here"
+    },
+    {
+     "title": "Neural Networks",
+     "why": "the same loop trains deep networks"
+    },
+    {
+     "title": "Training Loss Curves",
+     "why": "what loss looked like in my runs"
+    },
+    {
+     "title": "Overfitting and Generalization",
+     "why": "fitting is not the same as generalizing"
+    }
+   ]
+  },
+  {
+   "title": "Overfitting and Generalization",
+   "folder": "Concepts",
+   "focus": "Test sets, overfitting, bias and variance, baselines, and what my validation split did and did not show.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class3.html",
+     "sections": [
+      "keep a test set outside",
+      "separate fitting, choosing",
+      "overfitting fits noise",
+      "bias and variance",
+      "compare against a simple baseline"
+     ]
+    },
+    {
+     "path": "raw/assignments/custom-llm-README.md",
+     "sections": [
+      "loss evidence"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "taught here"
+    },
+    {
+     "title": "Evaluation Design",
+     "why": "how I evaluated my own models"
+    },
+    {
+     "title": "Training Loss Curves",
+     "why": "train vs validation loss"
+    },
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "validation used the same templates"
+    }
+   ]
+  },
+  {
+   "title": "Precision and Recall",
+   "folder": "Concepts",
+   "focus": "True/false positives, why accuracy can hide errors, precision vs recall, thresholds, and decision policies.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class3.html",
+     "sections": [
+      "part: evaluating predictions"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "taught here"
+    },
+    {
+     "title": "Evaluation Design",
+     "why": "choosing what to measure"
+    },
+    {
+     "title": "Overfitting and Generalization",
+     "why": "evaluate on held-out data"
+    }
+   ]
+  },
+  {
+   "title": "Reinforcement Learning",
+   "folder": "Concepts",
+   "focus": "Agents, actions, rewards now vs later, Q-learning, exploration, and why a reward defines what is optimized.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class3.html",
+     "sections": [
+      "part: reinforcement learning",
+      "the q-learning update"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 3 - Machine Learning",
+     "why": "taught here"
+    },
+    {
+     "title": "Deep Q-Networks",
+     "why": "Q-learning with a neural network"
+    },
+    {
+     "title": "Pac-Man DQN Agent",
+     "why": "my RL project"
+    }
+   ]
+  },
+  {
+   "title": "Deep Q-Networks",
+   "folder": "Concepts",
+   "focus": "How a DQN plays Atari: frames, actions, clipped rewards, replay memory, target network, and the limits I saw.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class3.html",
+     "sections": [
+      "why dqn uses replay",
+      "a q-table cannot list"
+     ]
+    },
+    {
+     "path": "raw/assignments/pacman-dqn-README.md",
+     "sections": [
+      "how the agent works",
+      "one limitation"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Reinforcement Learning",
+     "why": "the broader setting"
+    },
+    {
+     "title": "Pac-Man DQN Agent",
+     "why": "my DQN run"
+    },
+    {
+     "title": "Neural Networks",
+     "why": "the Q-function is a neural network"
+    }
+   ]
+  },
+  {
+   "title": "Neural Networks",
+   "folder": "Concepts",
+   "focus": "Neurons, nonlinearity, the training loop, parameters vs hyperparameters, optimizers, batches, and epochs.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class4.html",
+     "sections": [
+      "part: neural networks",
+      "the training loop",
+      "parameters vs hyperparameters",
+      "optimizers choose",
+      "batches make",
+      "epochs revisit"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 4 - Deep Learning and Transformers",
+     "why": "taught here"
+    },
+    {
+     "title": "Model Training and Gradient Descent",
+     "why": "the same update idea"
+    },
+    {
+     "title": "Transformer Attention",
+     "why": "transformers are neural networks"
+    },
+    {
+     "title": "Deep Q-Networks",
+     "why": "a network estimates action values"
+    }
+   ]
+  },
+  {
+   "title": "Training Loss Curves",
+   "folder": "Concepts",
+   "focus": "What training and validation loss showed in my Pac-Man and nanoGPT runs, and why lower loss is not the same as better results.",
+   "sources": [
+    {
+     "path": "raw/assignments/pacman-dqn-README.md",
+     "sections": [
+      "what i expected"
+     ]
+    },
+    {
+     "path": "raw/assignments/custom-llm-README.md",
+     "sections": [
+      "loss evidence"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Pac-Man DQN Agent",
+     "why": "loss rose as the agent improved a little"
+    },
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "loss fell 86% then flattened"
+    },
+    {
+     "title": "Model Training and Gradient Descent",
+     "why": "what loss measures"
+    },
+    {
+     "title": "Overfitting and Generalization",
+     "why": "train vs validation gap"
+    }
+   ]
+  },
+  {
+   "title": "Evaluation Design",
+   "folder": "Concepts",
+   "focus": "How I evaluated my models: fixed seeds and eval suites, small noisy samples, public development tests, and what I would change.",
+   "sources": [
+    {
+     "path": "raw/assignments/pacman-dqn-README.md",
+     "sections": [
+      "evaluation: all five games",
+      "one limitation",
+      "next experiment"
+     ]
+    },
+    {
+     "path": "raw/assignments/custom-llm-README.md",
+     "sections": [
+      "four-row comparison",
+      "one limitation"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Pac-Man DQN Agent",
+     "why": "five-game evaluation"
+    },
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "48-case eval suite"
+    },
+    {
+     "title": "Precision and Recall",
+     "why": "choosing the metric"
+    },
+    {
+     "title": "Overfitting and Generalization",
+     "why": "keep test data separate"
+    }
+   ]
+  },
+  {
+   "title": "Tokens and Embeddings",
+   "folder": "Concepts",
+   "focus": "How words become tokens and IDs, and how embeddings place words as vectors; with the actual values from my nanoGPT run.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class4.html",
+     "sections": [
+      "the problem: words",
+      "words as points",
+      "distance reflects",
+      "context determines",
+      "how words become tokens"
+     ]
+    },
+    {
+     "path": "raw/assignments/custom-llm-README.md",
+     "sections": [
+      "tracing the learning process"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "where I traced tokens and embeddings"
+    },
+    {
+     "title": "Transformer Attention",
+     "why": "attention updates token vectors"
+    },
+    {
+     "title": "Class 4 - Deep Learning and Transformers",
+     "why": "taught here"
+    },
+    {
+     "title": "Retrieval Augmented Generation",
+     "why": "embeddings power vector search"
+    }
+   ]
+  },
+  {
+   "title": "Transformer Attention",
+   "folder": "Concepts",
+   "focus": "Why attention replaced RNNs, how attention combines context, the transformer block, and generating one token at a time.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class4.html",
+     "sections": [
+      "part: sequences & attention",
+      "the transformer block",
+      "generating text, one token"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 4 - Deep Learning and Transformers",
+     "why": "taught here"
+    },
+    {
+     "title": "Tokens and Embeddings",
+     "why": "attention works on token vectors"
+    },
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "2 transformer blocks, 4 heads"
+    },
+    {
+     "title": "Context Windows",
+     "why": "attention cost grows with context"
+    }
+   ]
+  },
+  {
+   "title": "Sampling Temperature",
+   "folder": "Concepts",
+   "focus": "What temperature does to next-token probabilities, and what I saw at 0.3, 0.8 and 1.2.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "temperature: the creativity dial",
+      "llms are probabilistic"
+     ]
+    },
+    {
+     "path": "raw/assignments/custom-llm-README.md",
+     "sections": [
+      "tracing the learning process"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Tiny nanoGPT Model",
+     "why": "temperature comparison"
+    },
+    {
+     "title": "Prompt Engineering",
+     "why": "prompts and temperature both steer the distribution"
+    },
+    {
+     "title": "Hallucination",
+     "why": "sampling can produce fluent wrong text"
+    }
+   ]
+  },
+  {
+   "title": "Prompt Engineering",
+   "folder": "Concepts",
+   "focus": "Prompting as probability steering, context, clear asks, system prompts, and project instruction files.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "part: prompting",
+      "part: prompt engineering"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "taught here"
+    },
+    {
+     "title": "Context Windows",
+     "why": "the prompt is part of the context"
+    },
+    {
+     "title": "Fine-Tuning and LoRA",
+     "why": "the other levers besides prompting"
+    },
+    {
+     "title": "Personal Wiki Project",
+     "why": "persona and research rules are system prompts"
+    }
+   ]
+  },
+  {
+   "title": "Context Windows",
+   "folder": "Concepts",
+   "focus": "What a context window is, how big it is, context rot, compression, and putting stable rules in stable places.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "part: context windows and memory"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "taught here"
+    },
+    {
+     "title": "Prompt Engineering",
+     "why": "what goes into the context"
+    },
+    {
+     "title": "Retrieval Augmented Generation",
+     "why": "select relevant passages instead of sending everything"
+    }
+   ]
+  },
+  {
+   "title": "Fine-Tuning and LoRA",
+   "folder": "Concepts",
+   "focus": "Fine-tuning and RLHF, their cost, and when to use prompting vs LoRA vs fine-tuning.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "part: what is fine-tuning?"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "taught here"
+    },
+    {
+     "title": "Prompt Engineering",
+     "why": "the cheaper lever"
+    },
+    {
+     "title": "Retrieval Augmented Generation",
+     "why": "RAG adds knowledge without retraining"
+    }
+   ]
+  },
+  {
+   "title": "Hallucination",
+   "folder": "Concepts",
+   "focus": "Why fluent systems can be wrong and the four defenses against it.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "part: hallucination is a system property",
+      "it knows"
+     ]
+    },
+    {
+     "path": "raw/course-slides/haas-class4.html",
+     "sections": [
+      "a fluent answer is still a prediction"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "taught here"
+    },
+    {
+     "title": "Retrieval Augmented Generation",
+     "why": "grounding answers in sources"
+    },
+    {
+     "title": "Sampling Temperature",
+     "why": "sampling adds variety and risk"
+    }
+   ]
+  },
+  {
+   "title": "Retrieval Augmented Generation",
+   "folder": "Concepts",
+   "focus": "What RAG is, why it matters, how it works (chunking, embeddings, vector search), and its limits.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "part: retrieval augmented generation"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "taught here"
+    },
+    {
+     "title": "Personal Wiki Project",
+     "why": "my RAG implementation"
+    },
+    {
+     "title": "Tokens and Embeddings",
+     "why": "embeddings make vector search possible"
+    },
+    {
+     "title": "Hallucination",
+     "why": "RAG is one defense"
+    },
+    {
+     "title": "Context Windows",
+     "why": "retrieved passages must fit the context"
+    }
+   ]
+  },
+  {
+   "title": "Local Open Models",
+   "folder": "Concepts",
+   "focus": "Open-weight models, model tiers, running models locally, and thinking models.",
+   "sources": [
+    {
+     "path": "raw/course-slides/haas-class5.html",
+     "sections": [
+      "open models & running locally",
+      "model tiers",
+      "what are “thinking” models",
+      "the biggest shift since gpt"
+     ]
+    }
+   ],
+   "related": [
+    {
+     "title": "Class 5 - LLMs Prompting and Retrieval",
+     "why": "taught here"
+    },
+    {
+     "title": "Personal Wiki Project",
+     "why": "runs Gemma locally"
+    },
+    {
+     "title": "Localhost and Ports",
+     "why": "the model server listens on localhost"
+    }
+   ]
+  }
+ ]
+}

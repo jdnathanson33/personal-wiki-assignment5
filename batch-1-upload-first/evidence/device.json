@@ -1,0 +1,31 @@
+{
+  "device": {
+    "os": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+    "python": "3.14.7",
+    "machine": "x86_64",
+    "macos": "26.6.2",
+    "model": "MacBookPro16,1",
+    "cpu": "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+    "cpu_cores": "6 physical / 12 logical",
+    "ram_gb": 16.0,
+    "gpu": "Chipset Model: Intel UHD Graphics 630; VRAM (Dynamic, Max): 1536 MB; Chipset Model: AMD Radeon Pro 5300M; VRAM (Total): 4 GB",
+    "available_memory_gb_approx": 7.8,
+    "disk_free_gb": 69.1
+  },
+  "internet": "offline",
+  "model": "gemma4:e2b-it-qat",
+  "embed_model": "embeddinggemma",
+  "timestamp": {
+    "mode": "status",
+    "execution": "local",
+    "model": "gemma4:e2b-it-qat",
+    "embed_model": "embeddinggemma",
+    "internet_at_run_time": "offline",
+    "timestamp": "2026-09-29T21:23:36",
+    "runtime": "ollama 0.35.0",
+    "model_digest": "07ea59a47401",
+    "model_quantization": "Q4_0",
+    "model_parameter_size": "4.6B",
+    "model_family": "gemma4"
+  }
+}
